@@ -1,0 +1,11 @@
+# IntelliJ
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor backups
+*.swp
+*~

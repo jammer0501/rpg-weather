@@ -1,0 +1,45 @@
+{
+  "id": "eriador",
+  "name": "Eriador",
+  "mode": "one-ring",
+  "description": "The temperate lands west of the Misty Mountains — the Shire, Bree-land, and the empty country beyond. Maritime weather from the Western Sea: soft, damp, rarely extreme.",
+  "seasons": {
+    "spring": [
+      { "id": "fair",       "label": "A fair morning giving way to broken cloud by afternoon.",                      "weight": 20, "category": "clear" },
+      { "id": "showers",    "label": "Bright spells and sudden showers — a changeable, hurrying sky.",                "weight": 25, "category": "rain" },
+      { "id": "soft_rain",  "label": "A soft persistent rain that soaks through cloaks by nightfall.",                "weight": 20, "category": "rain" },
+      { "id": "mist_morn",  "label": "Thick morning mist in the hollows, burning off slowly past noon.",              "weight": 15, "category": "mist" },
+      { "id": "overcast",   "label": "Grey overcast, cool, the light flat and shadowless.",                           "weight": 10, "category": "overcast" },
+      { "id": "wind_west",  "label": "A keen westerly wind, clouds racing, trees in full voice.",                     "weight": 7,  "category": "overcast" },
+      { "id": "late_frost", "label": "A late frost before dawn, melting away under a pale sun.",                      "weight": 3,  "category": "clear" }
+    ],
+    "summer": [
+      { "id": "warm_fair",  "label": "Warm and fair, a few high clouds, the air soft.",                               "weight": 35, "category": "clear" },
+      { "id": "hot_hazy",   "label": "Hot and hazy, the distances blurred, little wind.",                             "weight": 15, "category": "clear" },
+      { "id": "showers",    "label": "Sudden summer showers between long spells of sun.",                             "weight": 15, "category": "rain" },
+      { "id": "overcast",   "label": "Grey and muggy, the threat of rain that never quite comes.",                    "weight": 12, "category": "overcast" },
+      { "id": "thunder",    "label": "A hot afternoon breaking into thunder, brief and violent.",                     "weight": 10, "category": "storm" },
+      { "id": "mist_morn",  "label": "A cool misty morning, promising heat by midday.",                               "weight": 8,  "category": "mist" },
+      { "id": "steady_rain","label": "A full day of steady rain — the Shire-folk stay indoors.",                      "weight": 5,  "category": "rain" }
+    ],
+    "autumn": [
+      { "id": "mist_cold",  "label": "Cold mist lying thick in the valleys, the sun a pale disc.",                    "weight": 20, "category": "mist" },
+      { "id": "overcast",   "label": "Low grey cloud and a damp chill that gets into the bones.",                     "weight": 20, "category": "overcast" },
+      { "id": "rain_steady","label": "A steady cold rain, turning the roads to churned mud.",                         "weight": 20, "category": "rain" },
+      { "id": "gale",       "label": "A hard westerly gale driving rain in sheets — grim travelling.",                "weight": 10, "category": "storm" },
+      { "id": "fair_cold",  "label": "Bright and cold, the last leaves brilliant against a clean sky.",               "weight": 15, "category": "clear" },
+      { "id": "showers",    "label": "Showers and bright spells, rainbows over the hills.",                           "weight": 10, "category": "rain" },
+      { "id": "first_frost","label": "The first hard frost of the year — puddles crack underfoot at dawn.",           "weight": 5,  "category": "clear" }
+    ],
+    "winter": [
+      { "id": "raw_cold",   "label": "Raw and cold under a low grey sky, the light draining early.",                  "weight": 25, "category": "overcast" },
+      { "id": "rain_cold",  "label": "A cold relentless rain, the kind that finds every gap in a cloak.",             "weight": 20, "category": "rain" },
+      { "id": "hard_frost", "label": "Hard frost, still air, every twig furred with rime.",                           "weight": 15, "category": "clear" },
+      { "id": "sleet",      "label": "Sleet and wet snow turning to slush on the roads.",                             "weight": 12, "category": "rain" },
+      { "id": "snow_light", "label": "A light fall of snow, settling for a day before turning to mud.",               "weight": 10, "category": "rain" },
+      { "id": "fog",        "label": "Freezing fog — the world shrunk to a bow-shot in every direction.",             "weight": 10, "category": "mist" },
+      { "id": "clear_cold", "label": "Clear, still, and bitterly cold — stars like broken glass at night.",           "weight": 5,  "category": "clear" },
+      { "id": "blizzard",   "label": "A true winter storm — wind and driving snow, travel ill-advised.",              "weight": 3,  "category": "storm" }
+    ]
+  }
+}

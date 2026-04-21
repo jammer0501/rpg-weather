@@ -1,0 +1,48 @@
+{
+  "id": "wilderland",
+  "name": "Wilderland",
+  "mode": "one-ring",
+  "description": "The open lands of Rhovanion east of the Misty Mountains — the Anduin Vales, the plains north of Mirkwood, the Carrock country. A continental climate: hotter summers, colder winters, weather that arrives with purpose.",
+  "seasons": {
+    "spring": [
+      { "id": "fair_cool",   "label": "Fair and cool, a high clean sky, the grass bright after the thaw.",             "weight": 20, "category": "clear" },
+      { "id": "showers",     "label": "Running showers and sunshine, the Anduin full and brown.",                       "weight": 20, "category": "rain" },
+      { "id": "wind_east",   "label": "A hard easterly wind off the plains, clouds driven fast.",                       "weight": 15, "category": "overcast" },
+      { "id": "thunder",     "label": "A spring thunderstorm rolling down from the mountains — brief and loud.",        "weight": 10, "category": "storm" },
+      { "id": "mist_river",  "label": "River-mist thick in the valleys until mid-morning.",                             "weight": 12, "category": "mist" },
+      { "id": "overcast",    "label": "Grey overcast and a damp chill — the spring slow in coming.",                    "weight": 13, "category": "overcast" },
+      { "id": "warm_still",  "label": "Unseasonably warm and still — the first true day of spring.",                    "weight": 7,  "category": "clear" },
+      { "id": "snow_late",   "label": "A last wet snowfall, melting before it can settle.",                             "weight": 3,  "category": "rain" }
+    ],
+    "summer": [
+      { "id": "hot_clear",   "label": "Hot and clear, the sun fierce by noon, little shade on the open ground.",        "weight": 30, "category": "clear" },
+      { "id": "warm_breeze", "label": "Warm with a steady breeze — good travelling weather.",                           "weight": 20, "category": "clear" },
+      { "id": "thunder_eve", "label": "Building heat all day, breaking into thunder and hard rain by evening.",         "weight": 15, "category": "storm" },
+      { "id": "hazy_still",  "label": "Hazy and oppressively still — the horizon lost in heat-shimmer.",                "weight": 10, "category": "overcast" },
+      { "id": "rain_steady", "label": "A grey steady rain from dawn to dusk, unusual for the season.",                  "weight": 8,  "category": "rain" },
+      { "id": "dry_wind",    "label": "A dry wind off the eastern plains, dust in the air.",                            "weight": 8,  "category": "clear" },
+      { "id": "storm_hard",  "label": "A violent thunderstorm — lightning walking on the horizon, travellers take cover.", "weight": 6, "category": "storm" },
+      { "id": "cool_bright", "label": "A cool bright day between the heat — grateful weather.",                         "weight": 3,  "category": "clear" }
+    ],
+    "autumn": [
+      { "id": "fair_crisp",  "label": "Crisp and fair, the Anduin Vales gold and russet under a clean sky.",            "weight": 20, "category": "clear" },
+      { "id": "rain_cold",   "label": "A cold autumn rain, the sort that hurries travellers toward hearths.",           "weight": 20, "category": "rain" },
+      { "id": "mist_heavy",  "label": "Heavy mist lying on the river and plain until the sun climbs high.",             "weight": 15, "category": "mist" },
+      { "id": "wind_bitter", "label": "A bitter wind from the east, leaves stripped in hours.",                         "weight": 12, "category": "overcast" },
+      { "id": "overcast",    "label": "Flat grey overcast, a damp chill, the light failing early.",                     "weight": 12, "category": "overcast" },
+      { "id": "storm_fall",  "label": "An autumn storm — driving rain and branches down across the road.",              "weight": 10, "category": "storm" },
+      { "id": "frost_hard",  "label": "The first hard frost, puddles iced, breath steaming.",                           "weight": 8,  "category": "clear" },
+      { "id": "snow_first",  "label": "An early fall of wet snow, unsettling and half-melted by afternoon.",            "weight": 3,  "category": "rain" }
+    ],
+    "winter": [
+      { "id": "cold_clear",  "label": "Clear and bitterly cold, the sky hard and blue, the shadows long.",              "weight": 18, "category": "clear" },
+      { "id": "snow_steady", "label": "A steady fall of dry snow, the plain turning white to the horizon.",             "weight": 18, "category": "rain" },
+      { "id": "overcast",    "label": "Leaden overcast, a raw wind, no warmth in the day at all.",                      "weight": 18, "category": "overcast" },
+      { "id": "blizzard",    "label": "A true blizzard off the east — wind, driving snow, travel foolhardy.",           "weight": 12, "category": "storm" },
+      { "id": "fog_frozen",  "label": "Freezing fog, hoarfrost on every surface, the world reduced to a few paces.",    "weight": 10, "category": "mist" },
+      { "id": "sleet",       "label": "Sleet and half-snow, the roads treacherous underfoot.",                          "weight": 10, "category": "rain" },
+      { "id": "cold_still",  "label": "A still, cold day — the silence of deep winter on the land.",                    "weight": 8,  "category": "clear" },
+      { "id": "cold_killing","label": "A cold that kills the careless — ink freezes, metal burns bare skin.",           "weight": 6,  "category": "clear" }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "misty-mountains",
+  "name": "The Misty Mountains",
+  "mode": "one-ring",
+  "description": "The high passes and flanks of the Hithaeglir. Altitude weather — thin air, sudden storms, snow possible in any season above the treeline. Old and unfriendly country; the mountains themselves seem to resent travellers.",
+  "seasons": {
+    "spring": [
+      { "id": "clear_cold",  "label": "Clear and cold, the peaks sharp-edged against a pale sky.",                      "weight": 15, "category": "clear" },
+      { "id": "mist_peaks",  "label": "Mist clinging to the peaks, the path visible only a bow-shot ahead.",            "weight": 20, "category": "mist" },
+      { "id": "thaw_mud",    "label": "Thaw running down the slopes — every path a running stream of meltwater.",      "weight": 15, "category": "rain" },
+      { "id": "snow_late",   "label": "A heavy late snowfall, the passes closed for a day or more.",                   "weight": 15, "category": "storm" },
+      { "id": "wind_cruel",  "label": "A cruel wind from the heights, impossible to stand against on exposed ground.",  "weight": 12, "category": "overcast" },
+      { "id": "storm_sudden","label": "A storm arriving with no warning — wind, driven snow, nowhere to shelter.",      "weight": 12, "category": "storm" },
+      { "id": "fair_brief",  "label": "A brief fair spell, the Anduin Vales visible far below to the east.",            "weight": 8,  "category": "clear" },
+      { "id": "sleet_stone", "label": "Sleet and freezing rain, the stones glazed and treacherous.",                    "weight": 3,  "category": "rain" }
+    ],
+    "summer": [
+      { "id": "fair_thin",   "label": "Fair and bright, the air thin and cold even under the sun.",                     "weight": 25, "category": "clear" },
+      { "id": "mist_morn",   "label": "Heavy morning mist in the valleys, burning away as the sun climbs.",             "weight": 20, "category": "mist" },
+      { "id": "storm_sudden","label": "A sudden mountain storm — black cloud boiling over the peaks, lightning close.",  "weight": 15, "category": "storm" },
+      { "id": "wind_keen",   "label": "A keen wind along the ridges, cloud-shadow racing across the slopes.",           "weight": 12, "category": "overcast" },
+      { "id": "rain_steady", "label": "Cold steady rain — reminder that this is no summer in the lowlands' sense.",     "weight": 10, "category": "rain" },
+      { "id": "snow_high",   "label": "Snow falling on the higher peaks, rain at travel-altitude.",                     "weight": 8,  "category": "rain" },
+      { "id": "clear_still", "label": "A rare still clear day — the mountains at their most beautiful and least honest.","weight": 7,  "category": "clear" },
+      { "id": "fell_voices", "label": "A wind that whistles strangely through the high places — the old tales stir.",    "weight": 3,  "category": "storm" }
+    ],
+    "autumn": [
+      { "id": "cold_clear",  "label": "Cold and clear, first snow already whitening the highest peaks.",                "weight": 15, "category": "clear" },
+      { "id": "storm_first", "label": "The first true mountain storm of the season — snow, wind, a warning.",           "weight": 15, "category": "storm" },
+      { "id": "mist_freeze", "label": "Freezing mist, hoarfrost growing on cloak and beard.",                           "weight": 18, "category": "mist" },
+      { "id": "wind_cutting","label": "A cutting wind from the north, the cold working through every layer.",          "weight": 15, "category": "overcast" },
+      { "id": "snow_steady", "label": "Steady snowfall at altitude — the passes beginning to close.",                   "weight": 15, "category": "storm" },
+      { "id": "rain_freezing","label": "Freezing rain, every rock a sheet of ice underfoot.",                          "weight": 12, "category": "rain" },
+      { "id": "overcast",    "label": "Low grey cloud sitting on the slopes, damp and cold and close.",                 "weight": 7,  "category": "overcast" },
+      { "id": "fair_brief",  "label": "A brief fair spell between storms — seize it or regret it.",                     "weight": 3,  "category": "clear" }
+    ],
+    "winter": [
+      { "id": "blizzard",    "label": "Blizzard — the passes impassable, shelter the only hope, visibility nothing.",    "weight": 25, "category": "storm" },
+      { "id": "snow_deep",   "label": "Deep fresh snow, every step laboured, every hour of progress hard-won.",         "weight": 20, "category": "storm" },
+      { "id": "cold_killing","label": "A killing cold — still, clear, absolute. Skin freezes to metal in moments.",     "weight": 15, "category": "clear" },
+      { "id": "wind_shriek", "label": "A shrieking wind along the ridges, drifting snow across every path.",            "weight": 12, "category": "storm" },
+      { "id": "fog_frozen",  "label": "Frozen fog, the world grey and close, every surface rimed white.",               "weight": 10, "category": "mist" },
+      { "id": "snow_steady", "label": "Steady heavy snow — not a storm, but relentless, hour after hour.",              "weight": 10, "category": "rain" },
+      { "id": "clear_brutal","label": "Clear and brilliantly cold, the sun no comfort at all.",                         "weight": 5,  "category": "clear" },
+      { "id": "fell_storm",  "label": "A storm with no natural feel to it — fell voices in the wind, the old malice.",  "weight": 3,  "category": "storm" }
+    ]
+  }
+}

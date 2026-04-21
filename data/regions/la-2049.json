@@ -1,0 +1,19 @@
+{
+  "id": "la-2049",
+  "name": "Los Angeles",
+  "mode": "blade-runner",
+  "description": "Greater Los Angeles, 2049. The climate collapse is old news. Rain when it comes is acid; the sky has forgotten blue; the sun is a rumour above the permanent overcast. A few variations on a theme of bad.",
+  "seasons": {
+    "any": [
+      { "id": "smog_heavy",    "label": "HEAVY SMOG. visibility 200m. particulate warning in effect. breathe shallow.",                   "weight": 22, "category": "overcast" },
+      { "id": "acid_light",    "label": "LIGHT ACID RAIN. ph 4.2. unprotected skin inadvisable. neon on every surface.",                  "weight": 20, "category": "rain" },
+      { "id": "acid_heavy",    "label": "HEAVY ACID RAIN. ph 3.6. streets running coloured under the holograms. stay in, stay covered.",  "weight": 15, "category": "rain" },
+      { "id": "overcast_grey", "label": "FLAT OVERCAST. no rain, no wind. the sky a single grey panel from horizon to horizon.",          "weight": 15, "category": "overcast" },
+      { "id": "fog_toxic",     "label": "TOXIC FOG ROLLED IN OFF THE PACIFIC. visibility sub-50m. respirator recommended.",               "weight": 10, "category": "mist" },
+      { "id": "dust_dry",      "label": "DRY DUST EVENT. wind off the eastern deserts. grit in everything. amber light.",                 "weight": 8,  "category": "clear" },
+      { "id": "rain_cold",     "label": "COLD RAIN, NON-ACID. unusual. almost clean. people on the street look up.",                      "weight": 5,  "category": "rain" },
+      { "id": "clear_weak",    "label": "WEAK SUN BREAKING THROUGH. a thin bright disc. visible shadows for the first time in weeks.",    "weight": 3,  "category": "clear" },
+      { "id": "storm_electrical","label": "ELECTRICAL STORM. lightning walking between the spires. advertising boards stuttering. power warnings city-wide.","weight": 2, "category": "storm" }
+    ]
+  }
+}
