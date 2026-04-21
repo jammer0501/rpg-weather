@@ -1,0 +1,184 @@
+/* ─── Reset ─────────────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+[hidden] { display: none !important; }
+
+/* ─── Layout ─────────────────────────────────────────────────────────────── */
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+
+  /* Colour and font vars are set by the active theme stylesheet. */
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base, 1rem);
+  line-height: 1.6;
+}
+
+.app {
+  width: 100%;
+  max-width: 480px;
+  padding: 1.5rem 1.25rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ─── App title ──────────────────────────────────────────────────────────── */
+
+.app-title {
+  margin-bottom: 1rem;
+  /* Font, size, and colour set by theme stylesheet */
+}
+
+/* Each mode shows only its own title span */
+body.mode-one-ring  .title-blade-runner { display: none; }
+body.mode-blade-runner .title-one-ring  { display: none; }
+
+/* ─── Mode toggle ────────────────────────────────────────────────────────── */
+
+.mode-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mode-btn {
+  flex: 1;
+  min-height: 44px;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  background: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  border-radius: var(--radius-btn, 0);
+  transition: background 0.15s, color 0.15s;
+}
+
+.mode-btn.is-active {
+  background: var(--color-btn-active-bg);
+  color: var(--color-btn-active-text);
+  border-color: var(--color-btn-active-border, var(--color-border));
+}
+
+/* ─── Main section layout ────────────────────────────────────────────────── */
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ─── Controls ───────────────────────────────────────────────────────────── */
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.control-group label {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-label);
+}
+
+select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-input-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  border-radius: var(--radius-input, 0);
+  cursor: pointer;
+  appearance: none;
+  background-image: var(--select-arrow);
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+}
+
+/* ─── Roll button ────────────────────────────────────────────────────────── */
+
+.roll-btn {
+  width: 100%;
+  min-height: 56px;
+  cursor: pointer;
+  border: 2px solid var(--color-accent);
+  background: var(--color-roll-bg);
+  color: var(--color-roll-text);
+  font-family: var(--font-ui);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-btn, 0);
+}
+
+/* ─── Result ─────────────────────────────────────────────────────────────── */
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.result-flourish {
+  text-align: center;
+  line-height: 1;
+}
+
+.result-meta {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--color-label);
+}
+
+.result-label {
+  font-family: var(--font-body);
+  font-size: var(--font-size-result, 1.1rem);
+}
+
+.reset-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  min-height: 36px;
+  padding: 0 0.75rem;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  background: none;
+  color: var(--color-label);
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-btn, 0);
+}
+
+/* ─── Mode-conditional visibility ────────────────────────────────────────── */
+
+/* Flourish is a visual asset, not a form control — CSS suppression is fine. */
+body.mode-blade-runner .result-flourish {
+  display: none;
+}
+
+/* #season-group and #date-group are suppressed via the hidden attribute by
+   app.js, not CSS. Form controls that are display:none still hold live state;
+   hidden makes them semantically absent. */

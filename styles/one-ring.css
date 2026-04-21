@@ -1,0 +1,177 @@
+/* ── One Ring — Illuminated Manuscript Theme ──────────────────────────────
+   Applied when <body class="mode-one-ring">.
+   All colour and font vars consumed by base.css are defined here.        */
+
+/* ── Custom properties ────────────────────────────────────────────────── */
+
+body.mode-one-ring {
+  /* Colours */
+  --color-bg:               #f4e8d0;
+  --color-text:             #2a1a0e;
+  --color-accent:           #8b2c1e;
+
+  --color-border:           #c8a97e;
+  --color-label:            #6b4422;
+  --color-input-bg:         #faf4e4;
+
+  --color-btn-bg:           #f4e8d0;
+  --color-btn-text:         #2a1a0e;
+  --color-btn-active-bg:    #8b2c1e;
+  --color-btn-active-text:  #faf4e4;
+
+  --color-roll-bg:          #8b2c1e;
+  --color-roll-text:        #faf4e4;
+
+  /* Typography */
+  --font-body:              'EB Garamond', Georgia, serif;
+  --font-ui:                'IM Fell English', Georgia, serif;
+  --font-size-base:         1.05rem;
+  --font-size-result:       1.2rem;
+
+  /* Shape — parchment corners are barely rounded, not pill-shaped */
+  --radius-btn:             2px;
+  --radius-input:           2px;
+
+  /* Dropdown chevron in iron-gall dark */
+  --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232a1a0e' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* ── Background ───────────────────────────────────────────────────────── */
+
+body.mode-one-ring {
+  background-color: var(--color-bg);
+}
+
+/* ── App title ────────────────────────────────────────────────────────── */
+
+body.mode-one-ring .app-title {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-style: italic;
+  font-size: 1.75rem;
+  font-weight: normal;
+  color: var(--color-accent);
+  text-align: center;
+  letter-spacing: normal;
+  line-height: 1.2;
+}
+
+/* ── Header / mode nav ────────────────────────────────────────────────── */
+
+body.mode-one-ring .app-header {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+}
+
+body.mode-one-ring .mode-btn {
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+body.mode-one-ring .mode-btn.is-active {
+  background-color: var(--color-accent);
+  color: var(--color-btn-active-text);
+  border-color: var(--color-accent);
+}
+
+/* ── Controls ─────────────────────────────────────────────────────────── */
+
+/* Override base.css uppercase/tracking — IM Fell English is calligraphic,
+   not a label font; it reads best italic at natural case. */
+body.mode-one-ring .control-group label {
+  text-transform: none;
+  letter-spacing: 0;
+  font-style: italic;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+}
+
+body.mode-one-ring select,
+body.mode-one-ring input[type="number"],
+body.mode-one-ring input[type="date"] {
+  background-color: var(--color-input-bg);
+  border-color: var(--color-border);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+body.mode-one-ring select:focus,
+body.mode-one-ring input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+  border-color: var(--color-accent);
+}
+
+/* ── Roll button ──────────────────────────────────────────────────────── */
+
+body.mode-one-ring .roll-btn {
+  font-style: italic;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  box-shadow: 0 2px 8px rgba(42, 26, 14, 0.18);
+  transition: box-shadow 0.15s, opacity 0.15s;
+}
+
+body.mode-one-ring .roll-btn:hover {
+  box-shadow: 0 3px 12px rgba(42, 26, 14, 0.25);
+}
+
+body.mode-one-ring .roll-btn:active {
+  opacity: 0.9;
+  box-shadow: none;
+}
+
+/* ── Result ───────────────────────────────────────────────────────────── */
+
+body.mode-one-ring .result-flourish {
+  width: 100%;
+  max-width: 300px;
+  height: 20px;
+  align-self: center;
+  background-image: url('../assets/flourish.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-bottom: 0.5rem;
+}
+
+/* Dateline — "The 14th day of Afteryule, in Wilderland —"
+   Italic IM Fell English in red-ochre reads as a manuscript rubric heading. */
+body.mode-one-ring .result-meta {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+/* Weather text — EB Garamond italic, sized to read easily across a table */
+body.mode-one-ring .result-label {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+/* ── Reset button ─────────────────────────────────────────────────────── */
+
+body.mode-one-ring .reset-btn {
+  font-style: italic;
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--color-label);
+  border-color: var(--color-border);
+  transition: color 0.15s, border-color 0.15s;
+}
+
+body.mode-one-ring .reset-btn:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}

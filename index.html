@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f3e7d0" id="meta-theme-color">
+  <title>RPG Weather</title>
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IM+Fell+English:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap">
+
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/one-ring.css">
+  <link rel="stylesheet" href="styles/blade-runner.css">
+</head>
+<body class="mode-one-ring">
+
+  <div class="app">
+
+    <header class="app-header">
+      <h1 class="app-title">
+        <span class="title-one-ring">Weather of the Wild</span>
+        <span class="title-blade-runner">Atmospheric Monitoring</span>
+      </h1>
+      <nav class="mode-nav" aria-label="Game mode">
+        <button class="mode-btn is-active" data-mode="one-ring" aria-pressed="true">
+          The One Ring
+        </button>
+        <button class="mode-btn" data-mode="blade-runner" aria-pressed="false">
+          Blade Runner
+        </button>
+      </nav>
+    </header>
+
+    <main class="app-main">
+
+      <section class="controls" aria-label="Weather settings">
+
+        <div class="control-group">
+          <label for="region-select">Region</label>
+          <select id="region-select"></select>
+        </div>
+
+        <div class="control-group" id="season-group">
+          <label for="season-select">Season</label>
+          <select id="season-select">
+            <option value="spring">Spring</option>
+            <option value="summer">Summer</option>
+            <option value="autumn">Autumn</option>
+            <option value="winter">Winter</option>
+          </select>
+        </div>
+
+
+      </section>
+
+      <div class="roll-section">
+        <button class="roll-btn" id="roll-btn">Roll weather</button>
+      </div>
+
+      <section class="result" id="result" hidden aria-live="polite" aria-atomic="true">
+
+        <div class="result-flourish" id="result-flourish" aria-hidden="true"></div>
+
+        <p class="result-meta" id="result-meta"></p>
+        <p class="result-label" id="result-label"></p>
+
+        <button class="reset-btn" id="reset-btn">Reset streak</button>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

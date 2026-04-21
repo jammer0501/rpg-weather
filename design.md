@@ -3,7 +3,7 @@
 ## Purpose
 A lightweight tool for generating in-game weather during tabletop RPG sessions. Two modes at launch:
 - **One Ring mode** — seasonal, region-aware weather for Eriador and Wilderland (TA 2946–3018 setting).
-- **Blade Runner mode** — dystopian LA weather (2049 era).
+- **Blade Runner mode** — dystopian LA weather (2037 era, per Free League's *Blade Runner RPG*).
 
 Used at the table by the Loremaster / Gamemaster on an Android phone or iPad. Must be quick to consult mid-session.
 
@@ -115,7 +115,7 @@ Each mode has a strongly differentiated visual identity. Switching modes should 
   - Accents: magenta (`#ff2e88` ish) and cyan (`#00e5ff` ish), used sparingly — for headings, key values, the roll button. Think "neon sign through rain."
 - **Typography** (all free, Google Fonts):
   - Everything monospace. *Space Mono* or *JetBrains Mono*.
-- **Decoration**: minimal chrome. A thin rule under section headings. Maybe a fake timestamp (`2049-11-14 / SECTOR 04`) above the weather result. Text could have a subtle text-shadow glow on accent colours to read as "neon."
+- **Decoration**: minimal chrome. A thin rule under section headings. Maybe a fake timestamp (`2037-11-14 / SECTOR 04`) above the weather result. Text could have a subtle text-shadow glow on accent colours to read as "neon."
 - **Weather result presentation**: styled like a terminal readout — monospaced, all-caps for the condition line, lowercase for the description. Slightly clipped, technical tone.
 
 ### Shared principles

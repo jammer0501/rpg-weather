@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 20">
+  <!-- Left rule -->
+  <line x1="0" y1="10" x2="118" y2="10" stroke="#8b2c1e" stroke-width="0.8" opacity="0.65"/>
+  <!-- Left dot -->
+  <circle cx="124" cy="10" r="2" fill="#8b2c1e" opacity="0.5"/>
+  <!-- Central diamond -->
+  <path d="M150 3 L157 10 L150 17 L143 10Z" fill="#8b2c1e"/>
+  <!-- Right dot -->
+  <circle cx="176" cy="10" r="2" fill="#8b2c1e" opacity="0.5"/>
+  <!-- Right rule -->
+  <line x1="182" y1="10" x2="300" y2="10" stroke="#8b2c1e" stroke-width="0.8" opacity="0.65"/>
+</svg>

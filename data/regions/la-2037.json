@@ -1,8 +1,8 @@
 {
-  "id": "la-2049",
+  "id": "la-2037",
   "name": "Los Angeles",
   "mode": "blade-runner",
-  "description": "Greater Los Angeles, 2049. The climate collapse is old news. Rain when it comes is acid; the sky has forgotten blue; the sun is a rumour above the permanent overcast. A few variations on a theme of bad.",
+  "description": "Greater Los Angeles, 2037. The climate collapse is old news. Rain when it comes is acid; the sky has forgotten blue; the sun is a rumour above the permanent overcast. A few variations on a theme of bad.",
   "seasons": {
     "any": [
       { "id": "smog_heavy",    "label": "HEAVY SMOG. visibility 200m. particulate warning in effect. breathe shallow.",                   "weight": 22, "category": "overcast" },
