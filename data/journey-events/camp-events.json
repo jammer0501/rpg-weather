@@ -1,0 +1,105 @@
+{
+  "id": "camp-events",
+  "name": "Camp Events",
+  "description": "Outcomes of the nightly camp-event feat-die roll. Most rolls (7-10) produce no event; numbered results 1-6 produce specific events; Gandalf rune and Eye of Sauron produce elevated/worsened variants of the blessing and attack outcomes respectively.",
+  "notes": "Per the homebrew Journey rules, the feat die is rolled once per major camp, favoured if the Scout's initial Explore roll succeeded. A favoured roll biases toward higher numbers and therefore toward 'no event', which is correct: a well-chosen camp is a quiet camp.",
+  "outcomes": {
+    "no_event": {
+      "label": "No event",
+      "die_result": "7-10",
+      "variants": [
+        "The camp rests undisturbed. A long night under a steady sky, the fire burning low, the watches passing without incident.",
+        "A quiet night. Wind in the trees, the stir of a horse, the occasional call of a night-bird — and nothing more.",
+        "The camp passes the dark hours in peace. Sleep for those who need it, a warm place for those who watch.",
+        "An uneventful night. Whatever walks the land tonight has no interest in this fire, this company, this place."
+      ],
+      "consequences": null,
+      "variant_selection": "random"
+    },
+    "attack": {
+      "label": "Attack on the camp",
+      "die_result": "1",
+      "variants": [
+        "Hostile figures in the firelight — a small band, armed and intent, breaking from the trees in the watch's quiet hours. They mean to plunder and to kill; defend or flee.",
+        "A sudden clamour at the edge of camp — shapes moving at a run, blades drawn, no talking. The attackers have chosen their moment: the watch is tired and the fire is low."
+      ],
+      "consequences": "Combat encounter. Number and nature of attackers at GM discretion — approximately equal in number to the fellowship. Party should not be surprised unless the watch was neglected.",
+      "variant_selection": "random"
+    },
+    "robbery": {
+      "label": "Robbery in the night",
+      "die_result": "2",
+      "variants": [
+        "Sometime in the small hours, a shape moves among the packs — not an attack, a theft. Food, coin, a blade if one is carelessly left: someone is taking what is not given.",
+        "The watch catches the movement too late, or not at all. A sack is gone in the morning — perhaps the best rations, perhaps something more precious. The thief is long away before anyone thinks to count."
+      ],
+      "consequences": "Awareness roll on the watching party-member. Success = catch the thief in the act; failure = discover loss in the morning. Loss: 1d4 rations and/or a small item of value at GM discretion.",
+      "variant_selection": "random"
+    },
+    "flood": {
+      "label": "Flash flood",
+      "die_result": "3",
+      "variants": [
+        "A storm rolls in fast, or the river at whose bank the camp is pitched begins to rise — the water coming where it should not. Gear must be moved, fire abandoned, sleep broken.",
+        "A deluge, or a river bursting its banks — the ground turns to mud and running water within minutes. Packs drowned, fire drowned, the camp's order reduced to scramble."
+      ],
+      "consequences": "Athletics and/or Explore rolls to save gear. Failure: 1d3 rations lost, possible equipment ruined, no restful sleep for the night (additional fatigue on the following day's travel).",
+      "variant_selection": "random"
+    },
+    "beasts": {
+      "label": "Bears or boars at the packs",
+      "die_result": "4",
+      "variants": [
+        "A bear ambles out of the dark toward the packs — drawn by the smell of food, unafraid of the fire, slow and terrible. It will take what it wants; only noise and numbers may hurry it.",
+        "A wild boar in the camp — not hunting the travellers, but hunting the food-stores. Its tusks are real and its temper is worse. No one wants a boar between them and their supper.",
+        "A sow with cubs, perhaps, or a pair of boars working together: whatever comes out of the dark is not in the mood for courtesy. Rations were always the target; keeping the rest of the camp intact is the work."
+      ],
+      "consequences": "1d6 rations lost to the beast's foraging. Combat avoidable with noise and fire-brands; violence is possible but rarely sensible. GM may roll on the Predators table for specifics.",
+      "variant_selection": "random"
+    },
+    "wanderer": {
+      "label": "A wanderer at the fire",
+      "die_result": "5",
+      "variants": [
+        "A figure emerging from the dark at the edge of the firelight — hands open, travel-worn, asking for shelter and a share of the fire. A traveller of some kind; the road is long, and strangers have their reasons.",
+        "A wanderer on the road at an unlikely hour — perhaps fleeing something, perhaps simply lost. They ask for a place at the fire and a little food; whatever else they are, they are tired."
+      ],
+      "consequences": "Roleplay encounter. The wanderer's identity at GM discretion — roll on the Traveller table (Lookout → Traveller events) for type and intent. May yield news, quest hooks, or uneasy company.",
+      "variant_selection": "random"
+    },
+    "elves_gift": {
+      "label": "A gift from the Elves",
+      "die_result": "6",
+      "variants": [
+        "In the morning, something left at the edge of camp that was not there when the watch was set: a small parcel, a cloth folded, a flask. The sign is Elvish; the gift is clean and welcome.",
+        "Before the watch changed, or perhaps during, something was left near the fire without a sound. The wrappings are leaf and silk; the contents are unmistakably Elvish in craft."
+      ],
+      "consequences": "1d6 Lembas gained. No one sees the giver — Elves who leave gifts do not expect thanks. The fact of the gift alone is a sign that the fellowship's road is walking well.",
+      "variant_selection": "random"
+    }
+  },
+  "special_outcomes": {
+    "gandalf_elevated_gift": {
+      "label": "A blessing from the Elves",
+      "die_result": "Gandalf rune",
+      "variants": [
+        "A gift left at the camp, greater than a traveller might dare hope: Lembas in plenty, a flask of miruvor, a word carved on a leaf in Tengwar that reads kindly to the one it is meant for.",
+        "Not just food but counsel: the gift is wrapped with a short message, or a token, or a verse — something meant for the fellowship, addressed by name. The Elves who left it knew what was needed."
+      ],
+      "consequences": "1d6 Lembas gained, plus one of: a flask of miruvor (restorative; one use), a piece of counsel (GM may share a small hint or foreshadowing), or a small token of lasting value. GM discretion on which is most fitting.",
+      "variant_selection": "random",
+      "base_outcome": "elves_gift"
+    },
+    "eye_worsened_attack": {
+      "label": "A worse attack",
+      "die_result": "Eye of Sauron",
+      "variants": [
+        "More than a raid: a force large enough to have been hunting the fellowship, come to this fire deliberately. Orcs, or evil Men, or worse — and among them, something that casts a colder shadow than its fellows.",
+        "The attack is not a coincidence. The attackers were led here, and their leader bears the marks of Shadow: a face too pale, eyes that do not blink, a blade that hums faintly in the firelight. This is not a band of bandits; this is a pursuit."
+      ],
+      "consequences": "Combat encounter, harder than a standard attack. Attackers outnumber the fellowship, or include a creature of Shadow (wight, barrow-wraith, servant of the Enemy). 1 shadow point inflicted on the party at the sight, regardless of combat outcome.",
+      "variant_selection": "random",
+      "base_outcome": "attack"
+    }
+  }
+}

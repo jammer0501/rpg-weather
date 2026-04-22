@@ -1,0 +1,27 @@
+{
+  "_comment": "Manifest for journey-event content. The app loads this first, then fetches each named file from data/journey-events/. Grouped by feature area so the app can load only what it needs for the active tab. The predators file is a shared utility consumed by multiple handlers rather than a rollable event table in its own right.",
+  "scout_events": [
+    "scout-geography",
+    "scout-campsite",
+    "scout-settlement",
+    "scout-ruin",
+    "scout-routing"
+  ],
+  "lookout_events": [
+    "lookout-weather",
+    "lookout-traveller",
+    "lookout-battle-site",
+    "lookout-predators",
+    "lookout-threats",
+    "lookout-robbery"
+  ],
+  "hunter_events": [
+    "hunter"
+  ],
+  "camp_events": [
+    "camp-events"
+  ],
+  "shared": [
+    "predators"
+  ]
+}
