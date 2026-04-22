@@ -1,0 +1,410 @@
+{
+  "id": "scout-geography",
+  "name": "Geography",
+  "event_target": "scout",
+  "description": "The Scout notices a terrain feature ahead — a hazard, a shelter, a passage to be chosen. The land itself shapes the journey.",
+  "types": {
+    "cave": {
+      "label": "Cave",
+      "description": "A cave or cavern opens off the route — shelter, threat, or mystery, depending on what has made its home within.",
+      "events": [
+        {
+          "id": "cave_empty_shelter",
+          "label": "An empty dry cave — clean floor, a draught for smoke to escape. Safe shelter for a night, if the fellowship wants it.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Useful rest opportunity. Explore roll confirms the cave is genuinely empty."
+        },
+        {
+          "id": "cave_attercops",
+          "label": "Webs thick across the entrance, and something stirring deeper in — attercops have nested here.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "A brood-mother, larger than the others, hunts with them.",
+          "notes": "Combat event. Avoidance is possible if the Scout spots the webs in time."
+        },
+        {
+          "id": "cave_wolves_den",
+          "label": "A wolves' den — bones scattered outside, a musky scent on the wind, the pack perhaps out hunting.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "on_eye": "The pack returns while the fellowship is still nearby.",
+          "notes": "Time-sensitive event. Stealth possible; staying is a gamble."
+        },
+        {
+          "id": "cave_bear",
+          "label": "A bear cave — claw-marks on the rock, scat at the entrance, the occupant's breath audible within.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "on_eye": "A sow with cubs — any disturbance brings a mother's fury.",
+          "notes": "Avoidance strongly preferred. Moving on quietly is the wise choice."
+        },
+        {
+          "id": "cave_trapped",
+          "label": "A companion is trapped — fallen into a concealed shaft, or pinned by a rockfall. Rescue is urgent and time-consuming.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The rescue uncovers something worse than a trapped companion.",
+          "notes": "Rescue event. Athletics, engineering, or patience required."
+        },
+        {
+          "id": "cave_beast",
+          "label": "Something larger lives here — a troll-sized scraping in the stone, fresh gnawed bones, a stench that is not animal. The beast is within.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The beast is already aware of the fellowship.",
+          "notes": "Genuine peril. Stealth or speed essential; direct combat is dangerous."
+        },
+        {
+          "id": "cave_runes",
+          "label": "Ancient runes cut deep into the cave wall — a language the fellowship may or may not read. A warning, a boundary, a name.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Lore event. Decipher grants insight; ignoring may miss a crucial clue."
+        },
+        {
+          "id": "cave_stream",
+          "label": "An underground stream or still pool deep in the cave — clean water, strange echoes, perhaps something glimmering in the depths.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Water resupply; possible minor discovery if the pool is searched."
+        },
+        {
+          "id": "cave_shrine",
+          "label": "A hidden shrine in the cave's depth — an old carving, offerings long since turned to dust. A place of some forgotten reverence.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Atmospheric/lore event. Respectful engagement may yield a blessing or clue."
+        },
+        {
+          "id": "cave_imminent_fall",
+          "label": "The cave's roof is unsafe — cracks spreading, debris falling, a rumble underfoot. Leave quickly or be buried.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "on_eye": "A full collapse; rescue rolls required, possible loss of gear.",
+          "notes": "Time-pressure event. Swift action needed."
+        },
+        {
+          "id": "cave_fungus",
+          "label": "A fungus-grove in the cave — luminous caps, clinging spores, a thick air that makes the head swim.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The spores are hallucinogenic or toxic; some in the party are affected.",
+          "notes": "Environmental hazard. Herbalism or caution avoids harm; the caps may themselves be valuable."
+        },
+        {
+          "id": "cave_treasure",
+          "label": "Treasure in the cave — a small hoard, a forgotten cache, a single precious thing. How did it get here, and who knows?",
+          "fatigue_success": 0,
+          "fatigue_failure": 2,
+          "on_eye": "The treasure has a guardian or a curse — it is not free for the taking.",
+          "notes": "Reward event with risk. Greed may cost more than the treasure is worth."
+        }
+      ]
+    },
+    "water": {
+      "label": "Water",
+      "description": "A river, stream, lake, or pool across the route — to be crossed, drunk from, feared, or respected.",
+      "events": [
+        {
+          "id": "water_troll_bridge",
+          "label": "A troll lurks beneath the bridge — demands toll, challenge, or passage in exchange for not eating any who cross.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "Two trolls; the second hidden until the bargaining turns.",
+          "notes": "Classic encounter. Riddles, bargaining, or combat — the fellowship chooses."
+        },
+        {
+          "id": "water_cursed_pool",
+          "label": "A stagnant pool of unnaturally still water — looks refreshing, but something about it chills the hair on the neck. Drinking may cause visions.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "One who drinks is touched by Shadow; 1 shadow point.",
+          "notes": "Awareness reveals the wrongness; Herbalism identifies the corruption."
+        },
+        {
+          "id": "water_flooded_ford",
+          "label": "The ford is flooded — heavy rain has swollen the stream to a brown rushing torrent. The crossing is now a real hazard.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "A companion is swept downstream; rescue required, gear lost.",
+          "notes": "Athletics event across the party. Alternative: detour costs a day or more."
+        },
+        {
+          "id": "water_mysterious_tracks",
+          "label": "Unusual tracks at the water's edge — not quite animal, not quite human. Fresh. The maker may be nearby.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The tracks' maker is watching now.",
+          "notes": "Mystery/awareness event. Caution is repaid; curiosity may not be."
+        },
+        {
+          "id": "water_waterfall_crossing",
+          "label": "The only passage is across the lip of a waterfall — wet rock, a sheer drop, a roar that drowns voices.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "A slip; rescue or injury rolls required.",
+          "notes": "Athletics event; Ropework or Craft may ease the crossing."
+        },
+        {
+          "id": "water_broken_bridge",
+          "label": "The bridge is broken — planks missing, a stone pier fallen. The fellowship must improvise a crossing or detour.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Problem-solving event. Ropework, felled trees, or detour all options."
+        },
+        {
+          "id": "water_dark_lake",
+          "label": "A lake of unnatural stillness — no fish, no birds, the water deep and dark. Something ancient waits here.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "Whatever dwells below takes interest in the fellowship's passage.",
+          "notes": "Atmospheric/shadow event. Disturbing the water is unwise."
+        },
+        {
+          "id": "water_hidden_path",
+          "label": "A hidden path behind a waterfall — risky to reach, but concealing something: a cave, a cache, a secret route.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Discovery opportunity. The path leads somewhere worth finding."
+        },
+        {
+          "id": "water_singing_stream",
+          "label": "A stream that sings — a true voice in the water, musical, almost words. An Elf? A spirit? A siren drawing travellers?",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Investigation event. Insight reveals benevolence or threat."
+        },
+        {
+          "id": "water_boats",
+          "label": "Boats moored at the shore — small craft, serviceable, recently used. Whose? And what if the owners return?",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Dilemma event. Borrowing saves time but risks trouble."
+        },
+        {
+          "id": "water_swim_crossing",
+          "label": "The only way forward is to swim — strong current, cold water, and gear that must be kept dry or abandoned.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Athletics event. Non-swimmers need aid."
+        },
+        {
+          "id": "water_glint",
+          "label": "Something glints in the streambed — a coin, a blade, a ring. Who lost it, and how long ago?",
+          "fatigue_success": 0,
+          "fatigue_failure": 0,
+          "notes": "Minor reward. GM discretion on what is found; not all finds are blessings."
+        }
+      ]
+    },
+    "gorge": {
+      "label": "Gorge",
+      "description": "A deep cleft in the land — a chasm, a ravine, a steep-sided canyon. Passage is treacherous.",
+      "events": [
+        {
+          "id": "gorge_fragile_bridge",
+          "label": "A narrow, ancient bridge spans the gorge — rope and wood, fraying, swaying in the wind. A fall from here is certain death.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The bridge gives way during crossing; a companion hangs from the wreckage.",
+          "notes": "High-stakes Athletics event. Care and courage both required."
+        },
+        {
+          "id": "gorge_fallen_bridge",
+          "label": "The bridge across the gorge has fallen — recently. The fellowship must find another route, climb down and up, or give up the crossing.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "notes": "Major obstacle. Detour costs a day; descent/ascent costs sweat and risk."
+        },
+        {
+          "id": "gorge_watched_from_above",
+          "label": "Something circles high above — crebain, a great eagle, a winged shadow. It watches the fellowship's progress.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The watcher is a servant of Shadow, and now it knows where the fellowship is.",
+          "notes": "Awareness event. Stealth possible but difficult in open terrain."
+        },
+        {
+          "id": "gorge_strange_sounds",
+          "label": "Strange sounds rise from the gorge's depths — a voice, a mechanical clanking, the chime of stone on stone. What lives down there?",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "Whatever makes the sound has noticed the listeners.",
+          "notes": "Mystery/investigation. Climbing down to see is the brave and foolish option."
+        },
+        {
+          "id": "gorge_unstable_path",
+          "label": "The path along the edge is unstable — loose scree, crumbling edge, a long fall beside every step.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "A slip; rescue or injury rolls required.",
+          "notes": "Athletics event per party member; care preferred over speed."
+        },
+        {
+          "id": "gorge_hidden_waterfall",
+          "label": "A waterfall hidden in the gorge's depths — unseen from above, its roar rising through the rock. The air is cool and wet.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Atmospheric event. Possible discovery if descent is attempted."
+        }
+      ]
+    },
+    "cliff": {
+      "label": "Cliff / Escarpment / Hill",
+      "description": "High ground, steep ground, commanding ground — rising sharply from the route, concealing or demanding a choice.",
+      "events": [
+        {
+          "id": "cliff_windswept",
+          "label": "Strong winds rise along the high ground — a choice: take cover and lose time, or push through and endure.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "on_eye": "A companion is caught in a gust near the edge; catch roll required.",
+          "notes": "Endurance vs. time trade-off."
+        },
+        {
+          "id": "cliff_rockslide",
+          "label": "Stones begin to tumble from above — a rockslide imminent. Scramble for cover or leap forward to safety.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "on_eye": "A companion is caught; crush rolls required, gear may be lost.",
+          "notes": "Reaction event. Speed essential."
+        },
+        {
+          "id": "cliff_blocked",
+          "label": "A sheer cliff blocks the path — there is no way forward but to climb, or to work around, costing time.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Route choice. Craft/Ropework eases climbing; detour costs a day."
+        },
+        {
+          "id": "cliff_path_unclear",
+          "label": "A path leads up the hill but its end cannot be seen — investigate for an opportunity, or press on and lose whatever lay above?",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Curiosity event. What's there is GM discretion; may be lore, vantage, or nothing."
+        },
+        {
+          "id": "cliff_watchtower",
+          "label": "An ancient watch-tower crowns the hill — dark against the sky, long-abandoned, possibly a place of vantage, possibly of danger.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Links to the Ruin — Ancient Watchtower table if investigated."
+        },
+        {
+          "id": "cliff_barrows",
+          "label": "A field of small hills — burial mounds, regular in shape, ancient. The fellowship is walking among the dead.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The dead take notice of the living passing over them.",
+          "notes": "Atmospheric/shadow event. Links to Ancient Burial Site if the party lingers."
+        }
+      ]
+    },
+    "marsh": {
+      "label": "Marsh",
+      "description": "Wet ground, sucking mud, slow water — dangerous, confusing, home to things no fellowship wants to meet.",
+      "events": [
+        {
+          "id": "marsh_faces_below",
+          "label": "Eerie faces beckon from beneath the water — the ancient dead, calling. Shadow tests must be made, and the danger of drowning or ambush is real.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "A companion is seized and pulled under; rescue and shadow both required.",
+          "notes": "Classic shadow/hazard event. Multiple rolls likely."
+        },
+        {
+          "id": "marsh_dwellers",
+          "label": "Marsh-dwellers attack — creatures bred in the wet places, all teeth and slickness. They come from all sides.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "Their numbers are greater than first glimpsed.",
+          "notes": "Combat event. Marsh terrain disadvantages heavy armour."
+        },
+        {
+          "id": "marsh_hag",
+          "label": "A marsh-hag — old, hungry, cunning. She bargains or curses, depending on how she is met.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "Her curse takes; a lasting effect on one of the party.",
+          "notes": "Social/mystical event. Respect and gifts better than defiance."
+        },
+        {
+          "id": "marsh_lost",
+          "label": "The path through the marsh is lost — the fellowship wanders, tiring, days slipping away.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Explore roll to regain direction; failure costs 1d3 days."
+        },
+        {
+          "id": "marsh_bog_lights",
+          "label": "Strange lights flicker over the swampy ground — will-o'-the-wisps, drawing travellers deeper. Follow them, or resist?",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "Those who follow are led to disaster.",
+          "notes": "Temptation event. Wisdom resists; curiosity may lead to treasure or doom."
+        },
+        {
+          "id": "marsh_sinking",
+          "label": "A companion steps wrong and begins to sink — the ground gives way beneath them. Rescue is urgent; things may come while the party is distracted.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "Rescue brings predators down on the rescuers.",
+          "notes": "Rescue event. Ropework, speed, and watch rolls required."
+        }
+      ]
+    },
+    "forest": {
+      "label": "Forest",
+      "description": "Close-grown trees, tangled paths, the light dim even at noon. The old wild places of Middle-earth hold their own rules.",
+      "events": [
+        {
+          "id": "forest_spirit_grove",
+          "label": "An ancient grove — a skeleton embraced in the gnarled branches of a tree that grew around them long ago. The air is thick with old sorrow.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The grove's spirit takes offence at the intrusion; 2 shadow points.",
+          "notes": "Shadow event. Respectful passage minimises cost; disrespect is punished."
+        },
+        {
+          "id": "forest_watched",
+          "label": "The sense of being watched — is it paranoia, or is something stalking the undergrowth? The hairs on every neck stand up.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The watcher attacks; 1 shadow point as the tension breaks.",
+          "notes": "Awareness event; a successful roll identifies the watcher, friend or foe."
+        },
+        {
+          "id": "forest_fog_disorient",
+          "label": "Thick fog rolls under the eaves — all sense of direction lost within minutes. Sound is muffled; shapes move in the mist.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The party becomes separated; gather-again rolls required.",
+          "notes": "Explore roll to hold direction; 1 shadow point on failure."
+        },
+        {
+          "id": "forest_trees_shift",
+          "label": "The trees shift — creaking and groaning, branches moving when no wind blows. Is it the wind? Or are the trees themselves watching?",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "One of the trees strikes; 1 shadow point, injury possible.",
+          "notes": "Atmospheric event. Calm passage may be possible; haste or violence provokes."
+        },
+        {
+          "id": "forest_strangers_camp",
+          "label": "A camp recently abandoned — fire still smouldering, packs scattered. No sign of struggle, but no sign of the occupants either.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Investigation opportunity. Provisions may be taken; answers may not be."
+        },
+        {
+          "id": "forest_enchanted_glade",
+          "label": "An enchanted glade — clear light, flowers out of season, old Elvish signs faint on the bark. A good place, though perhaps not entirely abandoned.",
+          "fatigue_success": 0,
+          "fatigue_failure": 0,
+          "notes": "Restorative event. Some traditions hold Hope may be regained here."
+        }
+      ]
+    }
+  }
+}

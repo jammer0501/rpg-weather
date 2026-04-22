@@ -1,0 +1,54 @@
+{
+  "id": "scout-routing",
+  "name": "Routing Decision",
+  "event_target": "scout",
+  "description": "The Scout identifies a choice on the road ahead — a fork, a shortcut, a question of whether to travel by day or night. The fellowship must decide.",
+  "events": [
+    {
+      "id": "routing_river_crossing",
+      "label": "A river crossing — ford it with soaked supplies, detour downstream seeking a bridge at a cost of days, or risk building a raft. Each carries risk: rations, time, injury.",
+      "fatigue_success": 2,
+      "fatigue_failure": 3,
+      "on_eye": "A companion loses their pack mid-crossing; 1d4 rations lost.",
+      "notes": "Classic party-decision event. Each choice has mechanical cost; rolls inform consequences."
+    },
+    {
+      "id": "routing_shortcut_dangerous",
+      "label": "A shortcut through dangerous terrain — saves days, but the terrain is known ill: a bog, a haunted wood, a place beasts are said to favour.",
+      "fatigue_success": 1,
+      "fatigue_failure": 2,
+      "on_eye": "The shortcut's reputation is earned; an additional hazard event triggers.",
+      "notes": "Trade-off event. Speed vs safety."
+    },
+    {
+      "id": "routing_high_low",
+      "label": "High path or low? The high path is exposed to weather and watched from the skies; the low path is longer, wetter, and winds through country that may hide enemies.",
+      "fatigue_success": 1,
+      "fatigue_failure": 2,
+      "notes": "Tactical choice. Weather and current threats inform wisdom."
+    },
+    {
+      "id": "routing_bypass_settlement",
+      "label": "A settlement lies on the route — bypass it (saving time and avoiding complications) or pass through (for news, resupply, and the hospitality of strangers)?",
+      "fatigue_success": 1,
+      "fatigue_failure": 2,
+      "notes": "Party choice event. Bypassing may miss a quest hook; engaging may cost a day."
+    },
+    {
+      "id": "routing_night_day",
+      "label": "Travel by night to cover more ground unseen, or by day to cover it more safely? The choice changes what the fellowship will meet.",
+      "fatigue_success": 1,
+      "fatigue_failure": 2,
+      "on_eye": "Night travel draws attention from watchers of Shadow.",
+      "notes": "Stealth/speed vs safety trade-off."
+    },
+    {
+      "id": "routing_path_road",
+      "label": "An unmarked path leaves the known road — shorter, by the Scout's reckoning, but going where? Take it or stay with the road?",
+      "fatigue_success": 1,
+      "fatigue_failure": 2,
+      "on_eye": "The path leads into genuine danger; a wrong turning costs heavily.",
+      "notes": "Curiosity vs caution. Explore reveals more about the path before committing."
+    }
+  ]
+}

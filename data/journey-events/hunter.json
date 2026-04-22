@@ -1,0 +1,169 @@
+{
+  "id": "hunter",
+  "name": "Hunter Events",
+  "event_target": "hunter",
+  "description": "The Hunter's search yields food, or trouble, or both. These events occur during journey travel when the Event Target falls to the Hunter. Distinct from dedicated Hunting Days, which use a separate mechanical flow.",
+  "types": {
+    "fishing": {
+      "label": "Fishing",
+      "description": "The hunter finds water worth fishing — stream, pool, lake edge.",
+      "events": [
+        {
+          "id": "fishing_good",
+          "label": "A good fishing spot — a deep still pool, fish rising at dusk. A patient hour yields 1d3 meals of trout, perch, or salmon depending on the water.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Positive event. Success yields rations; failure is lost time."
+        },
+        {
+          "id": "fishing_meagre",
+          "label": "Thin pickings — the water is fished out, or the season wrong. A single small fish, or nothing.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Minor event. Success yields 1 ration; failure, nothing."
+        },
+        {
+          "id": "fishing_disturbed",
+          "label": "Something disturbs the fishing — a shape in the water, a sudden silence of birds. The fish stop rising; something else is hunting here.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "Whatever disturbed the fishing now turns on the hunter; roll a predator.",
+          "notes": "Cross-reference to Predators data file on Eye of Sauron."
+        }
+      ]
+    },
+    "hunting": {
+      "label": "Hunting",
+      "description": "The hunter tracks prey through the undergrowth or across open country.",
+      "events": [
+        {
+          "id": "hunting_success",
+          "label": "The hunt succeeds — rabbit, venison, pigeon, or boar depending on the land. The kill is clean, the meat will keep.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Yields 1d3 rations on success."
+        },
+        {
+          "id": "hunting_trailing",
+          "label": "Sign of prey but never the prey itself — tracks leading nowhere, droppings cold, a half-glimpse through the undergrowth. Hours lost.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Exhausting event. No rations gained."
+        },
+        {
+          "id": "hunting_spoiled_meat",
+          "label": "The prey is taken, but the meat is spoiled — diseased, tainted, wrong in some way. Herbalism may reveal the cause in time; if not, sickness follows.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The spoilage is from Shadow corruption; 1 shadow point if any of the meat is eaten unknowing.",
+          "notes": "Hazard event. Herbalism roll detects corruption before consumption."
+        },
+        {
+          "id": "hunting_trap_injury",
+          "label": "A snare or deadfall fails badly — the device injures the hunter rather than the prey. A bruise, a gash, a sprained ankle — slow to recover.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "notes": "Self-inflicted hazard. Healing roll may reduce fatigue; no rations gained."
+        },
+        {
+          "id": "hunting_predator_encounter",
+          "label": "The hunt brings the hunter face to face with another hunter — a predator. The prey they sought is already dead, and the killer has just seen them.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The predator attacks before the hunter can retreat.",
+          "notes": "Cross-reference to Predators data file. Avoidance possible with Stealth; combat is the worst outcome."
+        }
+      ]
+    },
+    "foraging": {
+      "label": "Foraging",
+      "description": "The hunter searches for plants, roots, fruit, mushrooms.",
+      "events": [
+        {
+          "id": "foraging_good",
+          "label": "A good foraging find — a patch of wild garlic, a stand of fruiting berries, a mushroom-rich hollow. Enough for a meal or two.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Yields 1d3 rations. Herbalism or Lore ensures safety of identification."
+        },
+        {
+          "id": "foraging_bounty",
+          "label": "A genuine bounty — fruit trees heavy in season, a nut-tree scattering its crop, the forest generous. More than one meal, if the fellowship has means to carry it.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Yields 1d6 rations; carrying capacity may limit."
+        },
+        {
+          "id": "foraging_dubious",
+          "label": "Plants that might be food and might be poison — the hunter's knowledge is uncertain. Herbalism roll decides.",
+          "fatigue_success": 0,
+          "fatigue_failure": 2,
+          "on_eye": "Misidentification; sickness strikes the party.",
+          "notes": "Risk event. Herbalism success yields rations safely; failure yields sickness."
+        },
+        {
+          "id": "foraging_empty",
+          "label": "The land is bare here — the season is wrong, the ground already picked over, or the forest just not yielding. Hours spent, nothing gained.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Time lost without reward."
+        }
+      ]
+    },
+    "stash": {
+      "label": "Hunting Stash",
+      "description": "The hunter finds a cache left by another — a hidden larder or hunter's store.",
+      "events": [
+        {
+          "id": "stash_intact",
+          "label": "A hunter's stash, intact — dried venison, salt pork, smoked rabbit. Left by someone who expected to return; they clearly have not.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Yields 1d6 rations. Moral question about taking another's food; likely academic if the owner is long gone."
+        },
+        {
+          "id": "stash_spoiled",
+          "label": "A stash found too late — the food is spoiled, the wrappings rotted. The care that made the cache is still visible; the contents are beyond use.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Nothing gained, but a small Lore roll may identify whose stash it was."
+        },
+        {
+          "id": "stash_trapped",
+          "label": "A stash with an unwelcome guardian — a wolverine, a bear, a nest of weasels already in residence and unwilling to share.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The guardian is a predator; roll one from the Predators data file.",
+          "notes": "Encounter event. Negotiation with wildlife is limited."
+        }
+      ]
+    },
+    "traps": {
+      "label": "Old Traps",
+      "description": "The hunter finds rabbit-snares or deadfalls set by another — still working, still yielding.",
+      "events": [
+        {
+          "id": "traps_yielding",
+          "label": "Working traps, yielding small game — rabbit, bird, a coney. The trapper's work; the hunter takes what is caught.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Yields 1d3 rations. Some traditions hold it is fair to take from untended traps; others, theft."
+        },
+        {
+          "id": "traps_owner",
+          "label": "A local trapper arrives as the hunter is inspecting their traps — they are not pleased. Negotiation or flight.",
+          "fatigue_success": 0,
+          "fatigue_failure": 2,
+          "notes": "Social event. Apology and news-for-traps may still yield food."
+        },
+        {
+          "id": "traps_sprung",
+          "label": "All the traps are sprung but empty — something has taken the catches already, perhaps a fox, perhaps a person. The trapper will be unhappy.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Nothing gained; a moment of atmospheric mystery."
+        }
+      ]
+    }
+  }
+}

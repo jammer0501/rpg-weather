@@ -1,0 +1,53 @@
+{
+  "id": "lookout-battle-site",
+  "name": "Battle Site",
+  "event_target": "lookout",
+  "description": "The Lookout spots the traces of violence past — a field where men (or worse) fought and fell. Some battles are ancient history; others are yesterday's news.",
+  "events": [
+    {
+      "id": "battle_ancient",
+      "label": "An ancient battle site — mounds long grassed over, broken blades turned up by plough and weather, a sense of old purpose. Who fought here, and for what?",
+      "fatigue_success": 0,
+      "fatigue_failure": 1,
+      "notes": "Lore event. History roll yields context; may connect to a campaign hook."
+    },
+    {
+      "id": "battle_recent_unknown",
+      "label": "A recent battle site — days old, bodies still on the field, carrion birds thick. The dead are strangers to the fellowship. Who won, and where have they gone?",
+      "fatigue_success": 1,
+      "fatigue_failure": 3,
+      "on_eye": "1 shadow point at the sight; survivors may still be nearby, wounded and desperate.",
+      "notes": "Shadow/investigation event. Burial may be a moral obligation."
+    },
+    {
+      "id": "battle_recent_factions",
+      "label": "A recent battle site where the dead tell a story — men of the West fallen among Men of the East, or worse pairings. A political meaning hangs over the field.",
+      "fatigue_success": 1,
+      "fatigue_failure": 3,
+      "on_eye": "The fellowship is seen by a returning survivor who may be friend, foe, or both.",
+      "notes": "News event. The battle's outcome has consequences for the region."
+    },
+    {
+      "id": "battle_recent_beasts",
+      "label": "A recent battle site where men fought beasts — wargs among dead horses, spiders among dead dwarves. The scale of the fight, and its brutality, is shocking.",
+      "fatigue_success": 1,
+      "fatigue_failure": 3,
+      "on_eye": "Some of the beasts still live, wounded and cornered nearby.",
+      "notes": "Shadow event. Investigation risks bringing the beasts back."
+    },
+    {
+      "id": "battle_memorial",
+      "label": "A war memorial — a cairn, a stone, a chiselled list of names — marking a place where valour was remembered. Flowers or stones recently laid.",
+      "fatigue_success": 0,
+      "fatigue_failure": 0,
+      "notes": "Atmospheric event. A moment of reflection; may restore Hope in some traditions."
+    },
+    {
+      "id": "battle_graves",
+      "label": "War graves, carefully maintained — someone tends this place still. A caretaker, a widow, a lone veteran keeping vigil. They have stories.",
+      "fatigue_success": 0,
+      "fatigue_failure": 1,
+      "notes": "Roleplay event. The caretaker is rich in local history and feeling."
+    }
+  ]
+}

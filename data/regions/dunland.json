@@ -1,0 +1,45 @@
+{
+  "id": "dunland",
+  "name": "Dunland",
+  "mode": "one-ring",
+  "description": "The hill-country west of the Misty Mountains and south of the Gap of Rohan — the homeland of the Dunlendings. Wet, windswept, rugged. The weather comes in hard off the western slopes, the valleys run with streams half the year, and the uplands feel older and less forgiving than the lowlands of Rohan to the east.",
+  "seasons": {
+    "spring": [
+      { "id": "rain_wind",     "label": "Rain driven hard on a west wind, the hills streaming with sudden brooks.",         "weight": 25, "category": "rain" },
+      { "id": "mist_hill",     "label": "Mist clinging to the hilltops, the valleys dim even at noon.",                     "weight": 20, "category": "mist" },
+      { "id": "fair_keen",     "label": "Fair and keen, the sky washed clean after rain, the air sharp.",                   "weight": 15, "category": "clear" },
+      { "id": "showers_sun",   "label": "Showers and sun in turn, rainbows over the rough pastures.",                       "weight": 15, "category": "rain" },
+      { "id": "overcast_raw",  "label": "Overcast and raw, a damp wind cutting through the valleys.",                       "weight": 12, "category": "overcast" },
+      { "id": "gale_west",     "label": "A hard westerly gale, whole hillsides of grass bending flat.",                     "weight": 8,  "category": "storm" },
+      { "id": "thunder_hill",  "label": "Thunder rolling between the hills — echoes coming from all sides at once.",        "weight": 5,  "category": "storm" }
+    ],
+    "summer": [
+      { "id": "fair_breezy",   "label": "Fair and breezy, the hill-grass silvered where the wind runs through.",            "weight": 25, "category": "clear" },
+      { "id": "showers_hard",  "label": "Hard summer showers — heavy while they last, gone within the hour.",               "weight": 20, "category": "rain" },
+      { "id": "warm_hazy",     "label": "Warm and hazy, the hills blurred in the middle distance.",                         "weight": 15, "category": "clear" },
+      { "id": "mist_morn",     "label": "Thick morning mist in the valleys, the hilltops above it as islands in a grey sea.","weight": 12, "category": "mist" },
+      { "id": "rain_day",      "label": "A full day of steady hill-rain, the Dunlendings shrugging and getting on with it.", "weight": 12, "category": "rain" },
+      { "id": "thunder_build", "label": "Heat building all afternoon, breaking into a hard thunderstorm by evening.",       "weight": 10, "category": "storm" },
+      { "id": "wind_uplands",  "label": "A steady wind across the uplands — cool under a fair sky.",                        "weight": 6,  "category": "clear" }
+    ],
+    "autumn": [
+      { "id": "rain_cold",     "label": "Cold rain on a hard wind, the paths running red with hill-clay.",                  "weight": 25, "category": "rain" },
+      { "id": "mist_cold",     "label": "Cold mist in every valley, the hilltops lost above, the light thin and failing.",  "weight": 20, "category": "mist" },
+      { "id": "gale_autumn",   "label": "An autumn gale off the west — the last leaves stripped, the streams in spate.",    "weight": 15, "category": "storm" },
+      { "id": "overcast_grim", "label": "Leaden overcast, damp and chill, the country at its most unwelcoming.",            "weight": 15, "category": "overcast" },
+      { "id": "fair_brief",    "label": "A brief fair spell between storms — the hills briefly gold and russet.",           "weight": 12, "category": "clear" },
+      { "id": "frost_early",   "label": "An early hard frost, every puddle glazed, breath steaming on the hill-path.",      "weight": 8,  "category": "clear" },
+      { "id": "showers_wind",  "label": "Windy showers and hurrying cloud — nothing settled for long.",                     "weight": 5,  "category": "rain" }
+    ],
+    "winter": [
+      { "id": "cold_wet",      "label": "Cold and wet, the Dunlendish winter at its most characteristic — raw, sodden, grim.","weight": 25, "category": "rain" },
+      { "id": "snow_heavy",    "label": "Heavy snow on the uplands, the high paths closed, the valleys filling white.",     "weight": 18, "category": "storm" },
+      { "id": "gale_cold",     "label": "A bitter westerly gale driving sleet — misery weather, staying indoors wisdom.",   "weight": 15, "category": "storm" },
+      { "id": "frost_hard",    "label": "Hard frost under a low sun, the hills silvered, the breath bitter.",               "weight": 12, "category": "clear" },
+      { "id": "fog_freezing",  "label": "Freezing fog in the valleys, every branch and stone furred with rime.",            "weight": 12, "category": "mist" },
+      { "id": "sleet_mud",     "label": "Sleet and half-melted snow — every path a churn of mud and slush.",                "weight": 10, "category": "rain" },
+      { "id": "clear_cold",    "label": "Clear and bitterly cold, the Misty Mountains sharp-edged white to the east.",      "weight": 5,  "category": "clear" },
+      { "id": "cold_still",    "label": "A still grey cold, no wind, no birdsong — the hill-country waiting.",              "weight": 3,  "category": "overcast" }
+    ]
+  }
+}

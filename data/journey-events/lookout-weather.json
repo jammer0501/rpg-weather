@@ -1,0 +1,16 @@
+{
+  "id": "lookout-weather",
+  "name": "Weather",
+  "event_target": "lookout",
+  "description": "The Lookout notices a change in the weather — not a random atmospheric event, but something that will affect travel. Use the Weather Generator feature of this app to determine the specific weather.",
+  "notes": "This event category is a thin stub that defers to the Weather feature. When a Weather event is rolled, the app should roll on the current region's seasonal weather table and present that result with any additional travel implications. Fatigue for weather events maps to the weather's severity: clear/overcast = 0-1, rain/mist = 1-2, storm/blizzard = 2-3.",
+  "events": [
+    {
+      "id": "weather_shift",
+      "label": "The weather turns — roll on the Weather Generator for the current region and season to determine what.",
+      "fatigue_success": 1,
+      "fatigue_failure": 2,
+      "notes": "The app should invoke the Weather feature directly. Fatigue values here are placeholders; actual fatigue depends on the weather rolled."
+    }
+  ]
+}

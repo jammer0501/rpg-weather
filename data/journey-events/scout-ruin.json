@@ -1,0 +1,224 @@
+{
+  "id": "scout-ruin",
+  "name": "Ruin",
+  "event_target": "scout",
+  "description": "The Scout spots a ruined structure ahead — relic of a vanished age, or more recent loss. Ruins offer shelter, lore, and occasionally something worse.",
+  "types": {
+    "ancient_watchtower": {
+      "label": "Ancient Watchtower",
+      "description": "A long-fallen tower from an earlier age — the masonry older than any kingdom the fellowship has heard of.",
+      "events": [
+        {
+          "id": "anc_watchtower_shelter",
+          "label": "The watchtower is sound enough in the base to give shelter for a night. Old carvings worn smooth by weather; a defensible position if trouble finds them.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Useful shelter. Possible minor Lore roll to identify the age or origin."
+        },
+        {
+          "id": "anc_watchtower_haunted",
+          "label": "The watchtower has a reputation — locals have warned of it. At dusk, the air grows colder; at midnight, something walks the broken parapet.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "on_eye": "The haunting has mass, not only presence — a wight or worse.",
+          "notes": "Shadow risk. Success means surviving the night; failure means shadow points or worse."
+        },
+        {
+          "id": "anc_watchtower_occupied",
+          "label": "The tower's ruins are occupied — a band of orcs, a family of trolls, bandits using it as a base. Approach carefully.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The occupants have spotted the fellowship first.",
+          "notes": "Likely combat encounter. Scout's stealth may allow bypassing."
+        },
+        {
+          "id": "anc_watchtower_cache",
+          "label": "Old arms or supplies hidden in a concealed niche — left by some ranger, long dead. A map, a blade, a ring, a journal.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Treasure event. Exact contents at GM discretion — a genuine boon, or a cursed burden."
+        }
+      ]
+    },
+    "overgrown_temple": {
+      "label": "Overgrown Temple",
+      "description": "A shrine or temple reclaimed by the wilderness — stones half-swallowed by root and moss, old images weathered past reading.",
+      "events": [
+        {
+          "id": "temple_peaceful",
+          "label": "A quiet grove grown over a shrine — old stones, a spring still running, a sense of peace that has not been disturbed in centuries.",
+          "fatigue_success": 0,
+          "fatigue_failure": 0,
+          "notes": "Restorative event. Some traditions say resting here restores Hope; GM discretion."
+        },
+        {
+          "id": "temple_desecrated",
+          "label": "The temple has been recently desecrated — symbols defaced, an altar broken. The violence feels fresh; the wrongness lingers.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The desecrators are nearby, or the shrine's guardian spirit is roused.",
+          "notes": "Atmospheric event. Investigation may reveal perpetrators."
+        },
+        {
+          "id": "temple_hermit",
+          "label": "A solitary figure lives among the stones — a hermit, perhaps mad, perhaps wise, perhaps both. They offer water, or strange counsel, or a question.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Encounter event. Roleplay opportunity; may yield lore or a cryptic warning."
+        },
+        {
+          "id": "temple_guardian",
+          "label": "Something guards the temple still — a spirit, a stone watcher, a beast bonded to the place. It is not hostile unless disturbed.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "on_eye": "The guardian's judgement falls against the fellowship.",
+          "notes": "High-variance encounter. Respectful passage is possible; intrusion is not."
+        }
+      ]
+    },
+    "abandoned_village": {
+      "label": "Abandoned Village",
+      "description": "A settlement gone silent — cottages standing but empty, the wells dry or fouled, the fields returning to wild.",
+      "events": [
+        {
+          "id": "abandoned_recent",
+          "label": "The village was abandoned recently — within a year, perhaps a season. Furniture still in the houses, tools where they were dropped. What drove them out is not immediately clear.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "Whatever emptied the village is nearby.",
+          "notes": "Investigation opportunity. Shelter available but uneasy."
+        },
+        {
+          "id": "abandoned_long",
+          "label": "A village long gone — roofs fallen, walls standing, bramble through every window. Centuries, perhaps. The name may be lost.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Sheltered but atmospheric. Lore roll may yield the village's fate."
+        },
+        {
+          "id": "abandoned_squatters",
+          "label": "The abandoned village now houses squatters — outlaws, runaways, the desperate. They are wary of travellers; violence possible.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "on_eye": "The squatters are organised and predatory.",
+          "notes": "Social or combat event. Negotiation possible; sharing food earns temporary peace."
+        },
+        {
+          "id": "abandoned_remnant",
+          "label": "One household remains — an old woman, a small family, a single hermit — the last of those who once lived here. They have stories to tell, if anyone will listen.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Roleplay event. Rich in local lore and tragedy."
+        }
+      ]
+    },
+    "collapsed_bridge": {
+      "label": "Collapsed Bridge",
+      "description": "A stone bridge from some earlier realm, now broken — the piers standing, the span fallen.",
+      "events": [
+        {
+          "id": "bridge_passable",
+          "label": "The bridge is mostly collapsed, but a narrow course remains — passable with care, dangerous with haste.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "A section gives way mid-crossing — rolls to catch hold, possible lost gear.",
+          "notes": "Athletics/agility event per party member."
+        },
+        {
+          "id": "bridge_ford_near",
+          "label": "The bridge is impassable, but a rough ford can be found downstream — cold water, uncertain footing, time lost.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Minor delay; Explore roll finds the best crossing."
+        },
+        {
+          "id": "bridge_lurker",
+          "label": "Something has made a home under the broken bridge — troll, lurker, hungry thing. It has been waiting for travellers.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The lurker is larger than expected, or not alone.",
+          "notes": "Combat encounter. Stealth may allow avoidance."
+        },
+        {
+          "id": "bridge_detour",
+          "label": "No crossing possible here — the fellowship must detour upstream or downstream, losing a full day or more.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "notes": "Pure time cost. GM decides exact days lost."
+        }
+      ]
+    },
+    "ancient_burial": {
+      "label": "Ancient Burial Site",
+      "description": "A place of the dead from another age — barrows, dolmens, a circle of standing stones.",
+      "events": [
+        {
+          "id": "burial_solemn",
+          "label": "A place of old dignity — a barrow, a ring of stones, wind through the grass. The dead rest quietly here.",
+          "fatigue_success": 0,
+          "fatigue_failure": 0,
+          "notes": "Atmospheric event. Lore roll may yield historical context."
+        },
+        {
+          "id": "burial_disturbed",
+          "label": "The site has been disturbed — a barrow broken open, stones overturned, offerings scattered. Treasure-seekers, or something worse.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The disturbance has woken something that did not want waking.",
+          "notes": "Shadow risk if the dead are angered. Investigation opportunity."
+        },
+        {
+          "id": "burial_wight",
+          "label": "The barrow is haunted — a wight or barrow-wraith stirs as the sun touches the stones. The fellowship is seen.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "More than one dead thing walks tonight.",
+          "notes": "Serious shadow encounter. Likely combat and shadow points."
+        },
+        {
+          "id": "burial_vigil",
+          "label": "Someone keeps vigil here — a mourner, a priest, a ranger honouring their ancestors. They are not hostile, but they do not welcome company.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Roleplay event. Respectful engagement may yield knowledge or aid."
+        }
+      ]
+    },
+    "collapsed_fort": {
+      "label": "Collapsed Fort",
+      "description": "A fortress of some bygone kingdom, now broken — walls tumbled, gatehouse fallen, inner courts open to the sky.",
+      "events": [
+        {
+          "id": "fort_shelter",
+          "label": "Enough of the fort remains to shelter the fellowship — a section of wall, a cellar, a guardhouse still roofed. Defensible if needed.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Useful shelter; lore roll may identify the fort's origin."
+        },
+        {
+          "id": "fort_occupied_neutral",
+          "label": "The ruins are occupied by a neutral party — a wandering tribe, a company of rangers, an order in retreat. They offer shelter, cautiously.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Social encounter. A good meeting earns allies or information."
+        },
+        {
+          "id": "fort_occupied_hostile",
+          "label": "The fort's ruins are held by a hostile force — orcs, bandits, worse. They use it as a base; the fellowship has been seen.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The garrison is larger than scouting suggests, or expecting reinforcements.",
+          "notes": "Combat encounter. Stealth or misdirection may allow escape."
+        },
+        {
+          "id": "fort_old_dead",
+          "label": "Old bones in the inner court — the fort's last defenders, never buried. Weapons and gear may still be usable; the dead still watch.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The dead are not content to be looted.",
+          "notes": "Looting opportunity with shadow risk. Respectful passage earns quiet."
+        }
+      ]
+    }
+  }
+}

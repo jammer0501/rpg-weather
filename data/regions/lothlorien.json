@@ -1,0 +1,44 @@
+{
+  "id": "lothlorien",
+  "name": "Lothlórien",
+  "mode": "one-ring",
+  "description": "The Golden Wood, held timeless by Galadriel's power. Weather within the bounds of Lórien moves to a different measure than the lands around — the mallorn-leaves do not fall, the air does not bite, and what storms come seem always to have already passed. A traveller leaving Lórien for the Anduin feels the ordinary world as a shock of colder, sharper air.",
+  "seasons": {
+    "spring": [
+      { "id": "gold_light",    "label": "A golden light beneath the mallorn, soft as honey, the air neither warm nor cool.","weight": 30, "category": "clear" },
+      { "id": "mist_silver",   "label": "Silver mist drifting through the trees, lifting slowly toward the canopy.",         "weight": 22, "category": "mist" },
+      { "id": "fair_still",    "label": "Fair and still, the forest hushed, no birds but the song of Elves somewhere above.","weight": 18, "category": "clear" },
+      { "id": "rain_gentle",   "label": "A gentle rain falling slow — warmer than it has any right to be.",                  "weight": 12, "category": "rain" },
+      { "id": "warm_breath",   "label": "A warm breath of air moves through the wood, bringing the scent of elanor.",        "weight": 10, "category": "clear" },
+      { "id": "dew_bright",    "label": "Heavy dew on every leaf, the wood lit as if by small silver lamps.",                "weight": 5,  "category": "mist" },
+      { "id": "storm_felt",    "label": "A storm is felt somewhere far off — here only a distant sound and a darker gold.",  "weight": 3,  "category": "storm" }
+    ],
+    "summer": [
+      { "id": "gold_warm",     "label": "Warm golden light, unhurried — the Wood breathing slowly in the long afternoon.",   "weight": 35, "category": "clear" },
+      { "id": "fair_soft",     "label": "Fair and soft, the air sweet with flowers that do not grow in mortal lands.",       "weight": 20, "category": "clear" },
+      { "id": "mist_dawn",     "label": "Silver mist at dawn, gone by the time the Elves sing the sun awake.",               "weight": 15, "category": "mist" },
+      { "id": "rain_warm",     "label": "A warm slow rain, the mallorn-leaves catching most of it, the rest turning silver as it falls.","weight": 12, "category": "rain" },
+      { "id": "still_deep",    "label": "A stillness so deep the heart seems to slow with it — no breath of wind.",           "weight": 10, "category": "clear" },
+      { "id": "gold_amber",    "label": "The light deepening toward amber as a distant storm passes beyond the borders.",    "weight": 5,  "category": "overcast" },
+      { "id": "rain_silver",   "label": "Rain falling through sunlight, every drop catching the gold — the Wood half-remembered.","weight": 3,  "category": "rain" }
+    ],
+    "autumn": [
+      { "id": "gold_eternal",  "label": "The gold of the mallorn unchanged, as it has been since the Wood was made.",        "weight": 30, "category": "clear" },
+      { "id": "mist_golden",   "label": "Golden mist among the trunks, slow-moving, as if reluctant to leave.",              "weight": 22, "category": "mist" },
+      { "id": "fair_cool",     "label": "Cool and bright, the air sharper than summer but still kinder than elsewhere.",     "weight": 18, "category": "clear" },
+      { "id": "rain_quiet",    "label": "A quiet rain, cool but not cold, pattering among leaves that will not fall.",       "weight": 12, "category": "rain" },
+      { "id": "wind_song",     "label": "A high wind in the canopy, turned by the leaves into something like singing.",      "weight": 8,  "category": "overcast" },
+      { "id": "dusk_long",     "label": "A long dusk, the gold turning slowly to dim silver — the Wood between day and night.","weight": 7,  "category": "overcast" },
+      { "id": "storm_passing", "label": "A storm moving around the Wood rather than through it — here only a darkened sky.", "weight": 3,  "category": "storm" }
+    ],
+    "winter": [
+      { "id": "gold_winter",   "label": "The gold of the mallorn undimmed even in winter — the light simply cooler, thinner.","weight": 30, "category": "clear" },
+      { "id": "fair_crystal",  "label": "Clear and cold, the air crystalline, every breath visible in the gold-silver light.","weight": 20, "category": "clear" },
+      { "id": "mist_frost",    "label": "Silver mist carrying frost, every leaf edged white — but the leaves hold.",          "weight": 18, "category": "mist" },
+      { "id": "still_cold",    "label": "A still, deep cold that does not cut — the Wood simply asleep in the light.",       "weight": 15, "category": "clear" },
+      { "id": "snow_brief",    "label": "A brief fall of snow, dusting the paths before a warmer air returns.",              "weight": 8,  "category": "rain" },
+      { "id": "rain_cold",     "label": "A cold quiet rain, washing the silver bark cleaner.",                               "weight": 5,  "category": "rain" },
+      { "id": "dusk_long",     "label": "A long slow dusk, the gold fading to blue, the Elven-lamps kindling one by one.",   "weight": 4,  "category": "overcast" }
+    ]
+  }
+}

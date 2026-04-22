@@ -1,0 +1,57 @@
+{
+  "id": "lookout-predators",
+  "name": "Predators",
+  "event_target": "lookout",
+  "description": "The Lookout spots a predator moving through the landscape — not an ambush, but a threat that demands notice. What is the beast doing, and will it notice the fellowship?",
+  "notes": "The specific predator is determined by a separate roll on the Predators data file (region-appropriate). This table provides the narrative framing for encountering one.",
+  "events": [
+    {
+      "id": "predator_distant",
+      "label": "A predator seen at distance — crossing a ridge, drinking at a stream, moving along a game-trail. Unaware of the fellowship, for now.",
+      "fatigue_success": 0,
+      "fatigue_failure": 1,
+      "on_eye": "The beast catches the fellowship's scent and turns toward them.",
+      "notes": "Avoidance event. Lookup a predator from the Predators data file for the region. Stealth prevents escalation."
+    },
+    {
+      "id": "predator_stalking",
+      "label": "A predator on the edge of awareness — glimpsed, lost, glimpsed again. The fellowship is being stalked, and the predator waits for the right moment.",
+      "fatigue_success": 1,
+      "fatigue_failure": 2,
+      "on_eye": "The predator strikes without warning; 1 shadow point as the fellowship realises how long it has been hunting them.",
+      "notes": "Tension event. Looking behind, changing route, or standing to fight all options."
+    },
+    {
+      "id": "predator_pack",
+      "label": "Not one but several — a pack moving with purpose. The fellowship has been noted; the pack is working around them.",
+      "fatigue_success": 2,
+      "fatigue_failure": 3,
+      "on_eye": "The pack is larger than first counted, and more cunning.",
+      "notes": "Serious threat. Make for high ground, shelter, or prepare for combat."
+    },
+    {
+      "id": "predator_feeding",
+      "label": "A predator at a kill — a fresh carcass, the beast aware but unwilling to give up food easily. Pass carefully, or fight for the right of way.",
+      "fatigue_success": 1,
+      "fatigue_failure": 2,
+      "on_eye": "The predator's meal is a fellow traveller, and its kin may be near.",
+      "notes": "Tactical choice. Wide detour avoids; direct passage risks combat."
+    },
+    {
+      "id": "predator_injured",
+      "label": "A predator injured and desperate — driven from its range, wounded, starving. It will attack even prey it would normally avoid.",
+      "fatigue_success": 1,
+      "fatigue_failure": 3,
+      "on_eye": "The beast is already charging.",
+      "notes": "Unpredictable encounter. Mercy killing may be the wise choice."
+    },
+    {
+      "id": "predator_warning",
+      "label": "The predator's territory marked — claw-scrapes on trees, scent-posts, bones arranged. Pass through it, and the owner may come to investigate.",
+      "fatigue_success": 0,
+      "fatigue_failure": 2,
+      "on_eye": "The owner arrives at the worst possible moment.",
+      "notes": "Hazard-warning event. Detour possible; speed also a valid answer."
+    }
+  ]
+}

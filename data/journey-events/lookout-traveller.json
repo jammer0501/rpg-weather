@@ -1,0 +1,221 @@
+{
+  "id": "lookout-traveller",
+  "name": "Travellers on the Road",
+  "event_target": "lookout",
+  "description": "The Lookout spots other travellers approaching or passing — friend, foe, or something in between. The road is shared; encounters are inevitable and rarely neutral.",
+  "types": {
+    "dwarves": {
+      "label": "Travelling Dwarves",
+      "description": "A small company of Dwarves on the road — traders, kin-seekers, or a delegation between the great halls.",
+      "events": [
+        {
+          "id": "dwarves_friendly",
+          "label": "A small company of Dwarves, well-armed and watchful, willing to exchange news with strangers who approach openly. They share fire and story, and may trade.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Social encounter. Trading opportunity; possible regional intel about the roads ahead."
+        },
+        {
+          "id": "dwarves_wary",
+          "label": "A Dwarvish party on urgent business, reluctant to be delayed. They salute politely, answer briefly, and press on.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Brief encounter. A social success may extract a useful piece of news; failure is simply a missed opportunity."
+        },
+        {
+          "id": "dwarves_aggrieved",
+          "label": "Dwarves bearing news of a wrong done — a family kinsman lost, a trade-road blocked, a grievance against a local lord. They seek aid or witnesses.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Quest hook. Lending aid wins Dwarvish gratitude, a powerful currency."
+        },
+        {
+          "id": "dwarves_refugees",
+          "label": "A Dwarvish family fleeing disaster — a hold overrun, a mine collapsed, a feud turned bloody. They need escort, supplies, or simply news of a safe road.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "What they flee is following.",
+          "notes": "Moral event. Aid is rarely refused by generous heroes; the cost in rations and time is real."
+        }
+      ]
+    },
+    "herbalist": {
+      "label": "Mysterious Herbalist",
+      "description": "A lone figure gathering plants — a wise-woman, a cunning-man, a wandering healer or hedge-witch.",
+      "events": [
+        {
+          "id": "herbalist_helpful",
+          "label": "An elderly herbalist gathering wort and root along the verges. They speak in riddles but know the land; in trade for news or coin, they offer remedies or advice.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Healing/lore opportunity. A Lore or social roll may yield a useful herbal preparation."
+        },
+        {
+          "id": "herbalist_warning",
+          "label": "An herbalist with urgent warnings — they have seen signs the fellowship has missed. A shadow on the road, a sickness in a village, a death foretold.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Foreshadowing event. The warning should be taken seriously; failure to listen has in-fiction cost."
+        },
+        {
+          "id": "herbalist_suspect",
+          "label": "A herbalist whose manner unsettles — their eyes linger too long, their questions probe too deep. Friendly enough, and genuinely knowledgeable; but something is off.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The herbalist serves another power; their interest is not innocent.",
+          "notes": "Mystery event. Awareness may reveal the source of unease; engagement carries risk."
+        },
+        {
+          "id": "herbalist_injured",
+          "label": "An herbalist injured on the road — a fall, an animal bite, a bandit's blade — with their satchel of remedies scattered. Aid is needed, and will be remembered.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Minor aid event. Helping yields friendship and, often, a gift of useful herbs."
+        }
+      ]
+    },
+    "merchant": {
+      "label": "Travelling Merchant",
+      "description": "A merchant or small caravan moving between settlements — pack animals, guards, goods for sale.",
+      "events": [
+        {
+          "id": "merchant_honest",
+          "label": "An honest merchant with a small caravan — pack horses, two guards, fair prices. Happy to rest the night alongside other travellers for mutual safety.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Resupply and safe camp. Social roll influences prices."
+        },
+        {
+          "id": "merchant_rumours",
+          "label": "A merchant who trades in words as much as goods — the road's gossip, a warning about an ambush, a rumour of a lord's madness two valleys over.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Intel opportunity. Success yields actionable news; failure means boasts and lies."
+        },
+        {
+          "id": "merchant_distressed",
+          "label": "A merchant recently robbed or attacked — stock lost, a guard wounded, the caravan master shaken. They offer a reward for escort to the next settlement.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The attackers are still watching the road.",
+          "notes": "Hire/moral event. Escort costs time; refusal may be remembered."
+        },
+        {
+          "id": "merchant_suspicious",
+          "label": "A merchant whose goods smell wrong — trading at odd hours, strange cargo, too-sharp guards, prices that make no sense. What are they really carrying?",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The merchant is a front for worse — smugglers, slavers, servants of Shadow.",
+          "notes": "Investigation event. Awareness and Insight reveal the rot."
+        }
+      ]
+    },
+    "adventurers": {
+      "label": "Band of Adventurers",
+      "description": "Another company like the fellowship's own — heroes, mercenaries, or hopefuls, on their own road.",
+      "events": [
+        {
+          "id": "adventurers_friendly",
+          "label": "A company of adventurers with news of their own — stories of a recent victory, warnings of a distant foe, perhaps an offer of a joint cause.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Lore and camaraderie. May yield plot hooks for future adventures."
+        },
+        {
+          "id": "adventurers_rivals",
+          "label": "A rival company on a similar errand — tension barely concealed, boasts exchanged, prices in the next town about to be inflated by their presence.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Social challenge. Success = mutual respect; failure = a feud that will recur."
+        },
+        {
+          "id": "adventurers_broken",
+          "label": "A company recently broken by their own quest — wounded, grieving, short of the numbers they set out with. They have seen something the fellowship should hear about.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "What broke them is still on the road.",
+          "notes": "Foreshadowing event. Hospitality to them earns deep gratitude; their warnings are hard truth."
+        },
+        {
+          "id": "adventurers_villainous",
+          "label": "A company whose deeds are darker than their boasts — trophies that should not be trophies, a captive, unease in how they speak of past successes.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "They have already decided the fellowship is prey, not peers.",
+          "notes": "Moral event. Confrontation is a real option; so is uneasy passage."
+        }
+      ]
+    },
+    "outlaws": {
+      "label": "Band of Outlaws",
+      "description": "A company living outside the law — bandits, brigands, rebels, or simply the desperate.",
+      "events": [
+        {
+          "id": "outlaws_toll",
+          "label": "Outlaws demanding a toll for safe passage — a few coins each, and no trouble. They are not looking for a fight; their position is strong, but so is common sense.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Social/economic event. Pay, negotiate, or fight. Charm and Awe may reduce the toll."
+        },
+        {
+          "id": "outlaws_ambush",
+          "label": "A serious ambush — bowmen in cover, a fallen tree across the road, numbers in the fellowship's favour only if they move fast.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The ambush is larger and more organised than first appeared.",
+          "notes": "Combat event. Lookout's Awareness determines surprise."
+        },
+        {
+          "id": "outlaws_desperate",
+          "label": "A small band of outlaws — starving, hunted, clearly once farmers or soldiers. They demand food rather than coin. A sharp eye sees the desperation.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Moral event. Violence is avoidable; compassion has a cost in rations."
+        },
+        {
+          "id": "outlaws_rebels",
+          "label": "Men with a cause — rebels against a local tyrant, deserters from an unjust war, or the last of a dispossessed clan. They demand news, not goods, and may become allies.",
+          "fatigue_success": 0,
+          "fatigue_failure": 2,
+          "on_eye": "The rebels' cause is worse than their claim, or their enemies more powerful than expected.",
+          "notes": "Political event. Taking sides has consequences for future travel in the region."
+        }
+      ]
+    },
+    "wizard": {
+      "label": "Wandering Wizard",
+      "description": "A figure of power on the road — one of the Istari, or a lesser wielder of lore and craft.",
+      "events": [
+        {
+          "id": "wizard_grave",
+          "label": "A tall robed figure, staff in hand, eyes keen beneath shadowed brows. They salute the fellowship gravely and ask of their road — and where it leads.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Momentous encounter. Social/Wisdom roll may yield guidance beyond the ordinary."
+        },
+        {
+          "id": "wizard_errand",
+          "label": "A wizard on urgent business — they speak briefly, share a warning, and press on. What did they see? Where do they go?",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Foreshadowing event. Their warning is always worth heeding."
+        },
+        {
+          "id": "wizard_aid",
+          "label": "A wizard who sees the fellowship is worthy of aid — they offer a small working, a word of lore, a token that will matter later.",
+          "fatigue_success": 0,
+          "fatigue_failure": 0,
+          "notes": "Boon event. GM discretion on the gift; the best are subtle and matter later."
+        },
+        {
+          "id": "wizard_test",
+          "label": "A wizard who tests the fellowship — a riddle, a moral question, a beggar's disguise. Their judgement is not idle.",
+          "fatigue_success": 0,
+          "fatigue_failure": 2,
+          "on_eye": "Failing the test has lasting consequence — a blessing withheld, a lesson taught harshly.",
+          "notes": "Roleplay-heavy event. Courtesy, humility, and wit all matter."
+        }
+      ]
+    }
+  }
+}

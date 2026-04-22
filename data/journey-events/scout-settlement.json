@@ -1,0 +1,222 @@
+{
+  "id": "scout-settlement",
+  "name": "Settlement",
+  "event_target": "scout",
+  "description": "The Scout spots a settlement ahead on the route — how the fellowship handles the encounter depends on the nature of the place and those who dwell there.",
+  "types": {
+    "farmstead": {
+      "label": "Farmstead",
+      "description": "A single farm, isolated, worked by one family and perhaps a hired hand.",
+      "events": [
+        {
+          "id": "farmstead_welcoming",
+          "label": "The farmstead is occupied and welcoming — a farmer, his wife, two sons and a daughter. Hospitality can be won with charm or coin; food and lodging offered in exchange for news from the road.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "A genuine rest stop. Success on a social skill roll recovers some fatigue; failure means awkwardness or an inflated price."
+        },
+        {
+          "id": "farmstead_wary",
+          "label": "The farmstead is occupied but wary — the farmer meets the fellowship at the gate with a woodaxe in hand, grown children behind him. Strangers have not been lucky lately in these parts.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Social challenge. Success = eventual hospitality. Failure = sent on their way with water and nothing else, or worse."
+        },
+        {
+          "id": "farmstead_abandoned",
+          "label": "The farmstead is mysteriously abandoned — doors hanging open, a half-eaten meal on the table, no livestock, no sign of violence. Something has gone wrong here.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "Whatever took the farmers is still in the area.",
+          "notes": "Investigation opportunity. Potential shelter, potential dread."
+        },
+        {
+          "id": "farmstead_burning",
+          "label": "The farmstead is on fire, recently raided — smoke rising, bodies in the yard, the raiders perhaps still within earshot. Survivors may need aid; the fellowship must decide quickly.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The raiders are still nearby, perhaps watching.",
+          "notes": "High-stakes moral choice. Failure to act fast means survivors lost; acting fast means potential combat."
+        }
+      ]
+    },
+    "hamlet": {
+      "label": "Hamlet",
+      "description": "A small cluster of dwellings — a handful of families, perhaps a common well, no inn or wall.",
+      "events": [
+        {
+          "id": "hamlet_friendly",
+          "label": "A friendly hamlet of native folk, glad of news and travellers. A headman offers floor-space in the largest hall; children gather to stare at the strangers.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Restful stop. Social skill roll influences the warmth of reception and what news is shared."
+        },
+        {
+          "id": "hamlet_sickness",
+          "label": "Sickness in the hamlet — a recent fever has left half the cottages dark. The remaining folk are exhausted, caring for the ill, and food is short.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Moral question: help and risk contagion, or press on? Herbalism or healing skills relevant."
+        },
+        {
+          "id": "hamlet_festival",
+          "label": "A local festival or feast is underway — strangers are welcome to join, and word of the road is the price of entry. Music, food, perhaps dancing.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Good-news event. Failure to engage socially means missing a chance for useful rumour."
+        },
+        {
+          "id": "hamlet_suspicious",
+          "label": "The hamlet is quiet and watchful — no one meets the fellowship's eye. Doors shut as they pass. Something has the place spooked.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The hamlet is hiding something dangerous — or someone.",
+          "notes": "Awareness or social roll reveals the source of unease. May become a side-adventure."
+        }
+      ]
+    },
+    "watchtower": {
+      "label": "Watchtower",
+      "description": "A lone tower or fortified post, manned or long-abandoned, set to watch a road or pass.",
+      "events": [
+        {
+          "id": "watchtower_manned",
+          "label": "A manned watchtower — two or three guards in the livery of a local lord. They demand the fellowship's business before granting passage; hospitality may be earned by the right words.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Social/authority encounter. Successful parley grants shelter and news; failure means tense passage."
+        },
+        {
+          "id": "watchtower_abandoned",
+          "label": "A long-abandoned watchtower, walls still sound but the gate sagging. Shelter for a night if the fellowship dares it — recent signs of occupation suggest they are not the first to think so.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The previous occupants are returning tonight — or never left.",
+          "notes": "Useful shelter, uncertain safety. Awareness roll reveals recent signs."
+        },
+        {
+          "id": "watchtower_ruined",
+          "label": "A watchtower half-fallen, the upper floors gone, the base still useful as windbreak. Old graffiti on the walls; older bones in the undergrowth.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Atmospheric shelter, possible minor discoveries (old coin, a weapon, a carved name)."
+        },
+        {
+          "id": "watchtower_besieged",
+          "label": "The watchtower is under attack — arrows on the walls, a small force of raiders at the gate, the defenders few. The fellowship must decide: intervene, pass by, or wait and see the outcome.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The attackers are more numerous and organised than first appeared.",
+          "notes": "High-stakes combat/moral event. Intervention wins allies; passing by wins safety."
+        }
+      ]
+    },
+    "trading_post": {
+      "label": "Trading Post",
+      "description": "An isolated outpost of commerce — a single merchant or a small family trading with passing travellers, perhaps with a pack of hired hands and beasts.",
+      "events": [
+        {
+          "id": "trading_post_honest",
+          "label": "An honest trading post — a travelling merchant in fixed quarters, rations, rope, simple gear available for coin. A warm fire and a table of news from further down the road.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Resupply opportunity. Fair prices; the merchant knows the region well."
+        },
+        {
+          "id": "trading_post_price_gouger",
+          "label": "A trading post run by a sharp-eyed profiteer — prices three times fair, and a knowing smile. Haggling is possible; so is trouble if the fellowship makes a scene.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "notes": "Social/economic challenge. Success = reasonable prices through negotiation; failure = overpay or leave empty-handed."
+        },
+        {
+          "id": "trading_post_information",
+          "label": "A trading post where the merchant knows more than they sell — information for sale, if the coin is right. Rumours of the road, dangers, hidden things.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Investigative opportunity. Payment yields genuine intel; failure means half-truths or lies."
+        },
+        {
+          "id": "trading_post_recently_robbed",
+          "label": "The trading post has been recently robbed — the merchant dazed and bloodied, stock scattered, the robbers gone a few hours ahead. Aid is urgently needed.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The robbers were not simple bandits — they took something specific, and will return.",
+          "notes": "Moral/action event. Pursuit possible; aid earns the merchant's enduring gratitude."
+        }
+      ]
+    },
+    "village": {
+      "label": "Village",
+      "description": "A settlement large enough to have an inn, a common green, perhaps a headman's hall — dozens of families, a market day, a story of its own.",
+      "events": [
+        {
+          "id": "village_thriving",
+          "label": "A thriving village — an inn with rooms available, a blacksmith, a market stall or two, and the headman glad to meet strangers of consequence.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Full rest opportunity. Restock, repair, gather news. A social roll can unlock local lore."
+        },
+        {
+          "id": "village_troubled",
+          "label": "The village is troubled — missing livestock, a child taken from the fields, unease at every door. The headman entreats travellers who look capable to investigate.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The cause of the trouble is worse than the villagers know.",
+          "notes": "Classic side-adventure hook. Accept or decline; accepting earns goodwill but costs time."
+        },
+        {
+          "id": "village_market_day",
+          "label": "A market day is in full swing — crowds, stalls, musicians, a wrestling contest on the green. Good resupply, better social opportunity. Someone of importance is passing through.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Opportunity event. Chance to meet a named NPC or learn of a distant happening."
+        },
+        {
+          "id": "village_hostile",
+          "label": "The village is openly hostile to outsiders — staves appearing in hands, doors slammed, the headman meeting the fellowship with a set jaw and a demand that they move on. Something has hardened these folk.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "on_eye": "The hostility has a cause the fellowship could become entangled in.",
+          "notes": "Social challenge. Success de-escalates; failure means bypassing the village and losing a day."
+        }
+      ]
+    },
+    "encampment": {
+      "label": "Encampment",
+      "description": "A temporary gathering — a merchant caravan, a war-band's bivouac, a gathering of herders at a summer pasture, a hunters' gathering.",
+      "events": [
+        {
+          "id": "encampment_caravan",
+          "label": "A merchant caravan camped for the night — wagons drawn in a ring, guards patrolling, fires within. Travellers welcome in exchange for news and coin.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Safe rest opportunity. Caravan-master may hire the fellowship for escort or share rumours."
+        },
+        {
+          "id": "encampment_warband",
+          "label": "A war-band's camp — armed men, pickets, a commander's tent. Hostile, neutral, or allied? The livery tells some story; the reception will tell the rest.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "on_eye": "The war-band is on a mission hostile to the fellowship or their allies.",
+          "notes": "High-variance encounter. Social/authority challenge. Getting this wrong means combat."
+        },
+        {
+          "id": "encampment_hunters",
+          "label": "A gathering of hunters or herders at a seasonal camp — fires, dogs, skins drying on frames. Local lore in abundance, and the offer of a hot meal for travellers with stories.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Restful; rich in local flavour. A good place to learn about the region's dangers."
+        },
+        {
+          "id": "encampment_refugees",
+          "label": "A camp of refugees — families, wagons, little food, fires small. They have fled something recent and terrible, and look to strangers for news, help, or passage.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "Whatever drove these people out is still following.",
+          "notes": "Moral weight. Aid may cost rations and time; bearing news forward earns their gratitude."
+        }
+      ]
+    }
+  }
+}

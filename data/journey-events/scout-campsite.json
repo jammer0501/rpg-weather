@@ -1,0 +1,54 @@
+{
+  "id": "scout-campsite",
+  "name": "Campsite",
+  "event_target": "scout",
+  "description": "The Scout spots a campsite ahead — occupied, recently abandoned, or bearing darker signs. Other travellers leave traces on the long roads of Middle-earth.",
+  "events": [
+    {
+      "id": "campsite_massacre",
+      "label": "A camp littered with corpses — ambushed and killed within the past few days. Orcs, bandits, or something worse? The silence is terrible.",
+      "fatigue_success": 2,
+      "fatigue_failure": 3,
+      "on_eye": "The killers are still in the area; 2 shadow points at the sight.",
+      "notes": "Investigation/shadow event. Burial or identification may matter later."
+    },
+    {
+      "id": "campsite_prisoners",
+      "label": "A camp of bandits — or perhaps lawmen — holding prisoners. Who is in the right? The fellowship must decide whether to intervene, and on which side.",
+      "fatigue_success": 1,
+      "fatigue_failure": 2,
+      "on_eye": "The situation is more complex than it first appears; a wrong choice has lasting consequence.",
+      "notes": "Moral dilemma. Insight and Scrutinise inform the choice."
+    },
+    {
+      "id": "campsite_hostile",
+      "label": "A camp occupied by hostiles — orcs, brigands, servants of Shadow. They have not yet seen the fellowship.",
+      "fatigue_success": 2,
+      "fatigue_failure": 3,
+      "on_eye": "The camp is larger than first glimpsed, with sentries the Scout missed.",
+      "notes": "Stealth or combat choice. Bypassing is often wisest."
+    },
+    {
+      "id": "campsite_neutral",
+      "label": "A camp of neutral travellers — traders, pilgrims, a surveying party. They are wary but not hostile; may offer fire and news.",
+      "fatigue_success": 0,
+      "fatigue_failure": 1,
+      "notes": "Social opportunity. Links to Lookout — Traveller for flavour."
+    },
+    {
+      "id": "campsite_abandoned",
+      "label": "An unoccupied camp — fire gone cold, packs gone, no sign of trouble. The travellers simply moved on, but left useful things behind.",
+      "fatigue_success": 0,
+      "fatigue_failure": 1,
+      "notes": "Minor resupply opportunity. The finding may be good or cursed at GM discretion."
+    },
+    {
+      "id": "campsite_elvish_gift",
+      "label": "A table set out — bread, fruit, a flask of clear water — laid in the Elvish manner for travellers. A gift, or a trap? The cloth is familiar.",
+      "fatigue_success": 0,
+      "fatigue_failure": 0,
+      "on_eye": "Not an Elvish gift at all — an illusion concealing something else.",
+      "notes": "Blessing event. Genuine Elvish gifts restore Hope; false ones carry danger."
+    }
+  ]
+}

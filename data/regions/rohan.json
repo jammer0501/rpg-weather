@@ -1,0 +1,48 @@
+{
+  "id": "rohan",
+  "name": "Rohan",
+  "mode": "one-ring",
+  "description": "The Riddermark — the great grasslands between the White Mountains and the Fangorn eaves, reaching north to the Limlight and west to the Isen. Big skies, bigger weather. Continental through and through: hot dry summers, cold hard winters, thunderstorms that can be seen coming for an hour across the plain.",
+  "seasons": {
+    "spring": [
+      { "id": "fair_keen",     "label": "Fair and keen, the grass bright with new green, larks rising from every hollow.",   "weight": 22, "category": "clear" },
+      { "id": "wind_steady",   "label": "A steady wind off the White Mountains — the grass silvered in long rolling waves.", "weight": 18, "category": "clear" },
+      { "id": "showers_fast",  "label": "Fast-moving showers, visible for miles before they arrive and after they leave.",   "weight": 15, "category": "rain" },
+      { "id": "thunder_walking","label": "Thunder walking across the plain, lightning striking far off on the horizon.",     "weight": 12, "category": "storm" },
+      { "id": "mist_valley",   "label": "Morning mist in the river-valleys, the open plain above clear under the rising sun.","weight": 10, "category": "mist" },
+      { "id": "overcast_wind", "label": "Grey overcast and a cold hard wind — the Mark at its most unwelcoming in spring.", "weight": 10, "category": "overcast" },
+      { "id": "rain_day",      "label": "A full day of steady rain — the plain dark and running, the horse-lords philosophical.","weight": 8,  "category": "rain" },
+      { "id": "snow_late",     "label": "A last wet snowfall, unseasonable — melting within the day, leaving the grass flat and bright.","weight": 5, "category": "rain" }
+    ],
+    "summer": [
+      { "id": "hot_dry",       "label": "Hot and dry, the sun fierce, the grass gone gold under a clean blue sky.",          "weight": 25, "category": "clear" },
+      { "id": "warm_wind",     "label": "Warm with a steady breeze, good travelling weather across open country.",           "weight": 20, "category": "clear" },
+      { "id": "hazy_heat",     "label": "Hazy heat, the mountains blurred in the south, dust-devils on the horizon.",        "weight": 15, "category": "clear" },
+      { "id": "storm_great",   "label": "A great plains thunderstorm — black cloud from horizon to horizon, rain in sheets.","weight": 12, "category": "storm" },
+      { "id": "storm_far",     "label": "Storm visible for an hour before it comes — lightning forking down over distant hills.","weight": 10, "category": "storm" },
+      { "id": "wind_dry",      "label": "A hot dry wind off the south, the grass crackling, water sources already low.",     "weight": 10, "category": "clear" },
+      { "id": "rain_welcome",  "label": "A welcome cool rain after heat — every stream running high in an hour.",            "weight": 5,  "category": "rain" },
+      { "id": "cool_bright",   "label": "Cool and brilliantly bright — a rare day, the kind the horse-lords remember.",      "weight": 3,  "category": "clear" }
+    ],
+    "autumn": [
+      { "id": "fair_clear",    "label": "Crisp and clear, the plain gone gold and russet, the White Mountains sharp in the south.","weight": 22, "category": "clear" },
+      { "id": "wind_cold",     "label": "A cold wind off the north, the grass flattened in long running waves.",             "weight": 18, "category": "overcast" },
+      { "id": "mist_heavy",    "label": "Heavy mist on the plain until mid-morning, the herds lost in it until it lifts.",   "weight": 15, "category": "mist" },
+      { "id": "rain_steady",   "label": "Steady cold rain from the west, the plain dark and running with it.",               "weight": 15, "category": "rain" },
+      { "id": "storm_autumn",  "label": "An autumn storm off the mountains — driving rain, thunder close, the horses uneasy.","weight": 12, "category": "storm" },
+      { "id": "frost_hard",    "label": "The first hard frost, grass and puddle alike glazed at dawn.",                      "weight": 10, "category": "clear" },
+      { "id": "overcast_grey", "label": "Flat grey overcast, the light failing early, the year turning.",                    "weight": 5,  "category": "overcast" },
+      { "id": "snow_first",    "label": "The first early snow on the highest ground — a warning from the north.",            "weight": 3,  "category": "rain" }
+    ],
+    "winter": [
+      { "id": "cold_hard",     "label": "Hard cold and a low grey sky — the Mark at its longest and least forgiving.",       "weight": 22, "category": "overcast" },
+      { "id": "snow_plain",    "label": "Snow falling steadily, the plain turning white from horizon to horizon.",            "weight": 20, "category": "rain" },
+      { "id": "wind_bitter",   "label": "A bitter wind off the north, drift-snow running like smoke along the ground.",       "weight": 15, "category": "overcast" },
+      { "id": "blizzard",      "label": "A true plains blizzard — visibility gone, the wind vicious, shelter everything.",    "weight": 12, "category": "storm" },
+      { "id": "clear_brutal",  "label": "Clear and brutally cold, a pale sun giving no warmth, the grass ice-white.",         "weight": 10, "category": "clear" },
+      { "id": "fog_freezing",  "label": "Freezing fog rising from the plain, the cold settling in for days.",                 "weight": 10, "category": "mist" },
+      { "id": "sleet_mud",     "label": "Sleet and half-snow, the trampled ground around the halls a churn of mud and ice.",  "weight": 7,  "category": "rain" },
+      { "id": "cold_still",    "label": "A still deep cold, no wind, every fire burning straight up into a hard blue dusk.",  "weight": 4,  "category": "clear" }
+    ]
+  }
+}

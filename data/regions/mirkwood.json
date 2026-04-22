@@ -1,0 +1,48 @@
+{
+  "id": "mirkwood",
+  "name": "Mirkwood",
+  "mode": "one-ring",
+  "description": "The great wood east of the Anduin, under the long shadow of Dol Guldur. The canopy mutes the sky — rain reaches the forest floor as dripping for hours after the storm has passed, the sun is a rumour through tangled branches, and the air itself seems thicker than it has any right to be. Weather under the eaves is less a matter of season than of mood.",
+  "seasons": {
+    "spring": [
+      { "id": "dim_still",     "label": "The canopy gives back only a dim green light, the air still and heavy.",           "weight": 22, "category": "overcast" },
+      { "id": "dripping",      "label": "Water dripping from every leaf — no rain, only the forest remembering rain.",      "weight": 20, "category": "rain" },
+      { "id": "mist_low",      "label": "Low mist among the trunks, the path lost beyond a few paces.",                      "weight": 18, "category": "mist" },
+      { "id": "fair_pierced",  "label": "Shafts of sunlight pierce the canopy here and there — a good day by Mirkwood's measure.","weight": 10, "category": "clear" },
+      { "id": "rain_dim",      "label": "Rain falling somewhere above; down here a steady dim patter and darker trees.",    "weight": 12, "category": "rain" },
+      { "id": "fog_thick",     "label": "Thick fog in the lower places, the trees ghosting in and out of view.",             "weight": 10, "category": "mist" },
+      { "id": "wind_above",    "label": "A high wind moving through the canopy — the forest floor still, the crowns creaking.","weight": 6, "category": "overcast" },
+      { "id": "storm_far",     "label": "Distant thunder rolling above the trees — flashes of light through the leaves, no rain reaching below.","weight": 2, "category": "storm" }
+    ],
+    "summer": [
+      { "id": "green_stifling","label": "Still, green, stifling — the air thick enough to taste, not a leaf moving.",       "weight": 25, "category": "overcast" },
+      { "id": "dim_humid",     "label": "Dim and humid, sweat running freely, every surface damp to the touch.",            "weight": 20, "category": "overcast" },
+      { "id": "mist_warm",     "label": "Warm mist clinging to the trunks, beads of water on every cobweb.",                 "weight": 15, "category": "mist" },
+      { "id": "dripping",      "label": "A slow dripping from the canopy, hours after any rain has ended.",                  "weight": 12, "category": "rain" },
+      { "id": "fair_golden",   "label": "Shafts of gold breaking through — in these places the forest almost feels kind.",   "weight": 10, "category": "clear" },
+      { "id": "thunder_above", "label": "Thunder above the canopy, muted and rolling — no rain reaches the floor.",          "weight": 8,  "category": "storm" },
+      { "id": "rain_through",  "label": "Rain heavy enough to reach the floor — a dim steady fall, the paths running muddy.","weight": 7,  "category": "rain" },
+      { "id": "still_wrong",   "label": "A stillness that feels wrong — no birds, no insects, only the weight of the wood.","weight": 3,  "category": "overcast" }
+    ],
+    "autumn": [
+      { "id": "mist_cold",     "label": "Cold mist among the trunks, leaves falling slow and silent through it.",            "weight": 22, "category": "mist" },
+      { "id": "dim_raw",       "label": "Dim and raw under the canopy, the damp working through every layer.",               "weight": 20, "category": "overcast" },
+      { "id": "rain_steady",   "label": "Steady cold rain finding its way through the thinning leaves.",                     "weight": 18, "category": "rain" },
+      { "id": "dripping_cold", "label": "Cold dripping from every branch, the forest floor a slick mat of wet leaves.",      "weight": 15, "category": "rain" },
+      { "id": "wind_creak",    "label": "A hard wind in the canopy, branches creaking, dead wood falling unseen.",           "weight": 10, "category": "overcast" },
+      { "id": "fog_heavy",     "label": "Heavy fog reducing the world to a few yards of wet trunk and wetter leaf.",         "weight": 8,  "category": "mist" },
+      { "id": "fair_russet",   "label": "A brief fair spell, the wood briefly lit russet and gold — it does not last.",      "weight": 5,  "category": "clear" },
+      { "id": "still_watched", "label": "A stillness in which the trees seem to lean close — something watches from nearby.","weight": 2,  "category": "overcast" }
+    ],
+    "winter": [
+      { "id": "dim_bitter",    "label": "Bitterly cold under the canopy, the cold held in by the tangle of black branches.", "weight": 25, "category": "overcast" },
+      { "id": "frost_rime",    "label": "Hoarfrost on every branch and hanging web — the forest in rime-grey.",              "weight": 18, "category": "clear" },
+      { "id": "fog_frozen",    "label": "Freezing fog among the trunks, the air itself seeming to bite.",                    "weight": 15, "category": "mist" },
+      { "id": "snow_little",   "label": "Little snow reaches the floor — only strange patches where the canopy breaks.",     "weight": 12, "category": "rain" },
+      { "id": "still_black",   "label": "A still black cold, no wind, no sound — only breath steaming in the dim light.",    "weight": 12, "category": "clear" },
+      { "id": "wind_shriek",   "label": "A wind shrieking in the high branches, nothing stirring on the floor below.",       "weight": 8,  "category": "overcast" },
+      { "id": "rain_freezing", "label": "Freezing rain finding gaps in the canopy — every surface turning to glass.",        "weight": 7,  "category": "rain" },
+      { "id": "fell_presence", "label": "A cold that feels intent, that feels sent — the Shadow thick under the eaves tonight.","weight": 3, "category": "overcast" }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "shire",
+  "name": "The Shire",
+  "mode": "one-ring",
+  "description": "The Four Farthings, from the Brandywine to the Far Downs. A kindly land, more even-tempered than the Eriador around it — Tolkien writes the Shire's weather as almost unnaturally placid, protected by some grace the Shire-folk themselves never notice. Rain is softer, winters shorter, storms rarer than in the wider Eriador.",
+  "seasons": {
+    "spring": [
+      { "id": "fair_soft",   "label": "Fair and mild, the hedgerows greening, a cuckoo somewhere over the hills.",    "weight": 25, "category": "clear" },
+      { "id": "showers_soft","label": "Soft spring showers between long spells of sun — good gardening weather.",     "weight": 25, "category": "rain" },
+      { "id": "mist_morn",   "label": "Morning mist in the bottoms, gone by second breakfast.",                       "weight": 15, "category": "mist" },
+      { "id": "warm_still",  "label": "An unseasonably warm still day — doors and windows open across the Farthings.", "weight": 12, "category": "clear" },
+      { "id": "overcast",    "label": "Grey and mild, neither quite rain nor quite dry.",                             "weight": 10, "category": "overcast" },
+      { "id": "rain_soft",   "label": "A gentle all-day rain, the sort that makes everything green.",                 "weight": 10, "category": "rain" },
+      { "id": "late_frost",  "label": "A late frost at dawn, gone before elevenses — the early blossom just spared.", "weight": 3,  "category": "clear" }
+    ],
+    "summer": [
+      { "id": "warm_golden", "label": "Warm and golden, the air thick with the smell of hay and pipeweed.",           "weight": 35, "category": "clear" },
+      { "id": "hot_still",   "label": "A hot still day, the Bywater pond full of hobbit children by noon.",           "weight": 15, "category": "clear" },
+      { "id": "showers",     "label": "Sunshine and brief showers, the old gaffer grumbling on his bench.",           "weight": 15, "category": "rain" },
+      { "id": "fair_breeze", "label": "Fair with a light westerly — washing on every line in Hobbiton.",              "weight": 15, "category": "clear" },
+      { "id": "thunder_brief","label": "An afternoon thunderstorm, brief and loud, then sunshine again by supper.",   "weight": 8,  "category": "storm" },
+      { "id": "overcast",    "label": "Mild overcast, a little muggy — the hobbits complain mildly.",                 "weight": 7,  "category": "overcast" },
+      { "id": "rain_day",    "label": "A full day of steady rain — an indoor day for pipe, pint, and gossip.",        "weight": 5,  "category": "rain" }
+    ],
+    "autumn": [
+      { "id": "fair_crisp",  "label": "Crisp and fair, apples bright on every bough, woodsmoke in the evening air.",  "weight": 25, "category": "clear" },
+      { "id": "mist_golden", "label": "Thick golden mist in the lanes until mid-morning, burning off to clear skies.", "weight": 20, "category": "mist" },
+      { "id": "rain_steady", "label": "Steady cool rain — good for the last of the root crops, bad for the harvest.", "weight": 18, "category": "rain" },
+      { "id": "overcast",    "label": "Low grey cloud, a damp chill, fires lit early in every smial.",                "weight": 15, "category": "overcast" },
+      { "id": "fair_cool",   "label": "A cool bright day, the leaves at their most brilliant — good walking weather.","weight": 12, "category": "clear" },
+      { "id": "showers",     "label": "Showers and sunshine in quick succession, rainbows over the Westfarthing.",    "weight": 7,  "category": "rain" },
+      { "id": "first_frost", "label": "The first hard frost — puddles iced at dawn, the grass whitened.",             "weight": 3,  "category": "clear" }
+    ],
+    "winter": [
+      { "id": "cool_grey",   "label": "Cool and grey, mild for the season — the old folk marvel at the easy winter.", "weight": 25, "category": "overcast" },
+      { "id": "rain_steady", "label": "Steady cold rain — muddy lanes, smials full of the smell of drying boots.",    "weight": 20, "category": "rain" },
+      { "id": "frost_hard",  "label": "Hard frost, still and bright — smoke rising straight from every chimney.",     "weight": 15, "category": "clear" },
+      { "id": "mist_cold",   "label": "Cold mist lying in the hollows until noon, the world hushed.",                 "weight": 12, "category": "mist" },
+      { "id": "snow_light",  "label": "A light fall of snow, charming for a day before it turns to slush.",           "weight": 12, "category": "rain" },
+      { "id": "clear_cold",  "label": "Clear and cold, stars hard and bright, the Old Took would have called it fair.","weight": 10, "category": "clear" },
+      { "id": "sleet",       "label": "Sleet and wet snow — grumbling on every doorstep.",                            "weight": 4,  "category": "rain" },
+      { "id": "storm_rare",  "label": "A real winter storm — a rarity in the Shire, talked about for years.",         "weight": 2,  "category": "storm" }
+    ]
+  }
+}

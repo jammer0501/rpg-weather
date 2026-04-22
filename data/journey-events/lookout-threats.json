@@ -1,0 +1,195 @@
+{
+  "id": "lookout-threats",
+  "name": "Threats",
+  "event_target": "lookout",
+  "description": "The Lookout spots servants of the Shadow moving through the landscape — orcs, trolls, wargs, worse. These are not casual encounters; the fellowship has seen something meant to be unseen, or been seen by something that should not see them.",
+  "types": {
+    "orcs": {
+      "label": "Orcs",
+      "description": "Orc-kind on the move — a scouting party, a patrol, a war-band.",
+      "events": [
+        {
+          "id": "orcs_scouts",
+          "label": "A small orc-scouting party — three or four, moving fast and low, carrying signals. They have not yet seen the fellowship.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "on_eye": "The scouts have already noted the fellowship's tracks and are circling back.",
+          "notes": "Stealth event. Letting them pass is wise; engaging draws the larger force."
+        },
+        {
+          "id": "orcs_patrol",
+          "label": "An orc patrol — a dozen or so, armoured and purposeful. They hold the road.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "A second patrol is behind the fellowship, closing the trap.",
+          "notes": "Serious threat. Flight or hiding; direct combat is last resort."
+        },
+        {
+          "id": "orcs_warband",
+          "label": "A war-band of orcs — dozens strong, moving with purpose, banners and drums. They do not know the fellowship exists; best it stays that way.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The fellowship is spotted; pursuit follows.",
+          "notes": "Flight event. Combat is suicide; the goal is to remain unseen."
+        },
+        {
+          "id": "orcs_captives",
+          "label": "Orcs driving captives — men, women, Dwarves, taken somewhere terrible. The fellowship must decide whether to intervene.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The captors are more numerous than first glimpsed; rescue is a desperate act.",
+          "notes": "Moral event. Rescue is heroic; passage is grim wisdom."
+        }
+      ]
+    },
+    "trolls": {
+      "label": "Trolls",
+      "description": "Trolls — stone-skinned, slow-witted, dangerous. They range at night and hide from the sun.",
+      "events": [
+        {
+          "id": "trolls_rest_day",
+          "label": "Stone trolls caught by day, frozen where the sunlight found them. Harmless now, but others of their kin may live nearby.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Atmospheric/lore event. The trolls' cache may yield treasure; their living kin are a future threat."
+        },
+        {
+          "id": "trolls_night_hunt",
+          "label": "Trolls on the night road — the thud of heavy feet, the smell of them on the wind. They hunt for food; they have not yet caught the fellowship's scent.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "One of the fellowship is already in their line of sight.",
+          "notes": "Stealth-till-dawn event. Combat is a last resort; sunlight saves."
+        },
+        {
+          "id": "trolls_lair",
+          "label": "A troll-lair spotted in a cave or ravine — piles of bones, the stench of old kills. The trolls are probably within, sleeping through the day.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "Wake the trolls, or worse, find they are not alone.",
+          "notes": "Tactical choice. Circle wide, or raid the lair for treasure during daylight."
+        }
+      ]
+    },
+    "wargs": {
+      "label": "Wargs",
+      "description": "Wargs — wolf-kin intelligent beyond animal reason, often bearing orc-riders, hunting in packs.",
+      "events": [
+        {
+          "id": "wargs_pack_scenting",
+          "label": "A warg-pack scenting the wind — heads up, yellow eyes, unhurried. They know there is prey nearby.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "They have scented the fellowship already.",
+          "notes": "Flight or fight. Wargs are faster than horses over distance."
+        },
+        {
+          "id": "wargs_riders",
+          "label": "Orcs mounted on wargs — a terrible combination of speed, intelligence, and malice. A war-party with purpose, on the trail of something.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The warg-riders are tracking the fellowship itself.",
+          "notes": "Grave threat. Concealment essential; direct combat is desperate."
+        },
+        {
+          "id": "wargs_solitary",
+          "label": "A lone warg — separated from its pack, perhaps wounded, perhaps exiled. Still a lethal beast, still cunning. And wherever one warg walks, more may be near.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "on_eye": "The rest of the pack closes while the fellowship faces the one.",
+          "notes": "Encounter event. Beware the isolation being a trap."
+        }
+      ]
+    },
+    "attercops": {
+      "label": "Attercops",
+      "description": "Great spiders — kin of the spawn of Ungoliant, descendants of Shelob, dwellers in dark woods and deep caves.",
+      "events": [
+        {
+          "id": "attercops_web_lines",
+          "label": "Web-lines between trees, threading the canopy — evidence that attercops hunt these woods. The webs are fresh.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "A spider drops from the canopy as the fellowship passes beneath.",
+          "notes": "Warning event. Stealth preferred; noise summons."
+        },
+        {
+          "id": "attercops_hunting",
+          "label": "Great spiders hunting — the scuttle of many legs in the branches, the glint of eyes in the dimness. Silent work required, or the fellowship becomes prey.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The fellowship is wrapped in a web before they can react; 1 shadow point from the horror.",
+          "notes": "Horror event. Cold steel and fire cut webs; both draw attention."
+        },
+        {
+          "id": "attercops_nest",
+          "label": "An attercop nest — cocooned prey swinging in the branches, the matron and her brood waiting below. The fellowship has stumbled into a larder.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The matron takes notice; she is far larger than the rest.",
+          "notes": "Genuine peril. Bypass or burn, but do not linger."
+        }
+      ]
+    },
+    "evil_men": {
+      "label": "Evil Men",
+      "description": "Men of the East or the South who have sworn themselves to Shadow — soldiers, emissaries, spies.",
+      "events": [
+        {
+          "id": "evil_men_patrol",
+          "label": "A patrol of Men in dark livery — foreign arms, foreign tongue, a discipline that speaks of training. They mark the fellowship but do not pursue.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "They were watching the fellowship specifically; word of their presence travels.",
+          "notes": "Surveillance event. Implications for the campaign, not combat."
+        },
+        {
+          "id": "evil_men_emissary",
+          "label": "A single rider of the East — an emissary, an assassin, a spy. They pass, observe, and will report.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "The rider is the bait; confederates are in position already.",
+          "notes": "Mystery/investigation event. Interception possible but risky."
+        },
+        {
+          "id": "evil_men_raiders",
+          "label": "Raiders of the South — a band of horse-Men, hostile to all who hold the old alliances. They charge any who look like the Enemy's enemies.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "Their number is greater than first seen.",
+          "notes": "Combat event. Mounted combat disadvantages foot-travellers."
+        }
+      ]
+    },
+    "undead": {
+      "label": "Undead Spirits",
+      "description": "Wights, barrow-wraiths, restless dead given form by Shadow — the worst kind of threat, against which steel alone may not avail.",
+      "events": [
+        {
+          "id": "undead_chill",
+          "label": "A sudden unnatural chill, the light dimming — a wight moves abroad. It has not yet formed, not yet fixed upon the fellowship.",
+          "fatigue_success": 1,
+          "fatigue_failure": 3,
+          "on_eye": "The wight solidifies and fixes upon one of the fellowship; shadow points and fear.",
+          "notes": "Supernatural encounter. Hope and song are weapons here."
+        },
+        {
+          "id": "undead_barrow_walk",
+          "label": "A shape walks from a barrow-mound in the twilight — a wight in its proper form, cold and ancient and hungry. The fellowship is between it and living flesh.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "More wights rise; the field behind the fellowship fills with grey shapes.",
+          "notes": "Grave shadow event. Flight or desperate stand; call on Elven-grace."
+        },
+        {
+          "id": "undead_voice",
+          "label": "A voice on the wind where no speaker stands — a lament, a threat, a name called from nowhere. Someone among the dead remembers something.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "A name in the voice is one of the fellowship's; 1 shadow point.",
+          "notes": "Mystery/shadow event. Respond or flee; engagement has cost."
+        }
+      ]
+    }
+  }
+}

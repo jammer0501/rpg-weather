@@ -1,0 +1,47 @@
+{
+  "id": "gondor",
+  "name": "Gondor",
+  "mode": "one-ring",
+  "description": "The realm of the Kings, from the White Mountains south to the river-mouths of the Anduin — Ithilien green and wooded east of the river, the Pelennor and Anórien drier and more open to the west, and Osgiliath broken between them. Warm by northern standards, Mediterranean in character: hot dry summers, mild wet winters, thunderstorms off the Sea, the Anduin moving through all of it.",
+  "seasons": {
+    "spring": [
+      { "id": "fair_warm",     "label": "Warm and fair, the Pelennor gone green, olive-blossom heavy in the Ithilien groves.","weight": 25, "category": "clear" },
+      { "id": "showers_warm",  "label": "Warm showers moving up the Anduin — bright wet streets in Osgiliath, the woods fragrant.","weight": 20, "category": "rain" },
+      { "id": "mist_river",    "label": "River-mist over the Anduin at dawn, lifting as the sun climbs the White Mountains.",  "weight": 15, "category": "mist" },
+      { "id": "overcast_mild", "label": "Mild overcast, the air damp and warm — good growing weather for the Pelennor farms.", "weight": 12, "category": "overcast" },
+      { "id": "thunder_sea",   "label": "Thunder coming up from the south off the Sea — brief hard rain, then brilliance.",    "weight": 10, "category": "storm" },
+      { "id": "wind_south",    "label": "A warm wind from the south, carrying the scent of flowering Ithilien across the river.","weight": 10, "category": "clear" },
+      { "id": "rain_soft",     "label": "Soft steady rain through the day — the Anduin running high and brown.",                "weight": 8,  "category": "rain" }
+    ],
+    "summer": [
+      { "id": "hot_clear",     "label": "Hot and clear, the White Mountains sharp-edged, shimmer rising from the flagstones of Osgiliath.","weight": 25, "category": "clear" },
+      { "id": "hot_haze",      "label": "Fierce heat under a hazy sky, the distances lost, work slowing to a crawl in the open.","weight": 20, "category": "clear" },
+      { "id": "warm_ithilien", "label": "Warm and still in the Ithilien woods — dappled shade, streams running cool, bees heavy.","weight": 15, "category": "clear" },
+      { "id": "storm_evening", "label": "Heat building all afternoon, breaking into a violent evening thunderstorm off the mountains.","weight": 12, "category": "storm" },
+      { "id": "wind_dry",      "label": "A dry south wind, dust kicked off the Pelennor, throats parched by noon.",                "weight": 10, "category": "clear" },
+      { "id": "fair_breeze",   "label": "A cooling breeze after heat — fair skies, the air suddenly kind.",                       "weight": 8,  "category": "clear" },
+      { "id": "rain_rare",     "label": "A rare summer rain, welcome but brief — the earth dry again within the hour.",           "weight": 7,  "category": "rain" },
+      { "id": "thunder_distant","label": "Thunder walking along the White Mountains — no rain in the lowlands, only the sound.",  "weight": 3,  "category": "storm" }
+    ],
+    "autumn": [
+      { "id": "fair_gold",     "label": "Fair and gold, Ithilien in autumn colour, vineyards heavy on the slopes.",               "weight": 22, "category": "clear" },
+      { "id": "rain_welcome",  "label": "Steady welcome rain after the long summer — dust washed from every stone.",              "weight": 18, "category": "rain" },
+      { "id": "mist_river",    "label": "Heavy river-mist along the Anduin until mid-morning, Osgiliath wrapped in grey.",        "weight": 15, "category": "mist" },
+      { "id": "warm_still",    "label": "Warm and still — a golden afternoon, swallows gathering to go south.",                    "weight": 12, "category": "clear" },
+      { "id": "wind_south",    "label": "A warm south wind, then a cold one behind it — the year turning in a single day.",        "weight": 10, "category": "overcast" },
+      { "id": "storm_south",   "label": "A southern storm moving up the Anduin — heavy rain, wind in the sails on the river.",     "weight": 10, "category": "storm" },
+      { "id": "overcast_cool", "label": "Cool overcast, the Pelennor brown and stubbled, a damp chill in the mornings.",           "weight": 8,  "category": "overcast" },
+      { "id": "fair_cool",     "label": "Crisp and cool, the light low and golden, the White Mountains crowned with new snow.",    "weight": 5,  "category": "clear" }
+    ],
+    "winter": [
+      { "id": "mild_wet",      "label": "Mild and wet — Gondor's winter, grey and green, rarely hard.",                            "weight": 25, "category": "rain" },
+      { "id": "rain_steady",   "label": "Steady cool rain, the Pelennor running with water, the Anduin high and dark.",            "weight": 20, "category": "rain" },
+      { "id": "mist_cold",     "label": "Cold river-mist thick along the Anduin, Osgiliath invisible from the other bank.",        "weight": 15, "category": "mist" },
+      { "id": "overcast_grey", "label": "Low grey overcast, damp and chill — the light failing early against the White Mountains.","weight": 15, "category": "overcast" },
+      { "id": "fair_cold",     "label": "Bright and cold, the mountains brilliant with snow, the Pelennor glittering with frost.", "weight": 12, "category": "clear" },
+      { "id": "storm_sea",     "label": "A winter storm off the Bay of Belfalas — hard rain, strong wind, the river running wild.","weight": 8,  "category": "storm" },
+      { "id": "frost_rare",    "label": "A hard frost, rare in these lands — every puddle glazed, every leaf silvered.",           "weight": 4,  "category": "clear" },
+      { "id": "snow_rare",     "label": "A rare fall of snow in the lowlands — remembered and remarked on for years.",             "weight": 1,  "category": "rain" }
+    ]
+  }
+}

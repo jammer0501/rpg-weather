@@ -1,0 +1,46 @@
+{
+  "id": "lindon",
+  "name": "Lindon",
+  "mode": "one-ring",
+  "description": "The Elven-realm west of the Blue Mountains — Forlindon and Harlindon, Mithlond at the Grey Havens. Ocean-facing and ancient, its weather shaped by the Great Sea and by long Elvish keeping. Milder than mortal coasts, cleaner-feeling, the sea-mists more beautiful than they ought to be.",
+  "seasons": {
+    "spring": [
+      { "id": "sea_mist_fair","label": "Sea-mist on the shore at dawn, burning off to a high clean sky by noon.",          "weight": 22, "category": "mist" },
+      { "id": "fair_salt",   "label": "Fair and bright with a salt wind off the Belegaer.",                               "weight": 20, "category": "clear" },
+      { "id": "showers_soft","label": "Soft showers passing inland off the sea, each one rainbowed.",                      "weight": 18, "category": "rain" },
+      { "id": "overcast",    "label": "High grey cloud, the wind steady, the sea pewter to the horizon.",                  "weight": 12, "category": "overcast" },
+      { "id": "mist_inland", "label": "Mist among the woods of Harlindon, the trees ghosting in and out of sight.",        "weight": 10, "category": "mist" },
+      { "id": "warm_still",  "label": "An unseasonable still warmth — the Sea calm, gulls drifting high.",                 "weight": 8,  "category": "clear" },
+      { "id": "rain_all_day","label": "A full day of soft grey rain from the Sea — no hardship, only quiet.",              "weight": 7,  "category": "rain" },
+      { "id": "wind_west",   "label": "A keen westerly off the water, clouds racing, waves breaking white on the strands.","weight": 3,  "category": "overcast" }
+    ],
+    "summer": [
+      { "id": "fair_clean",  "label": "Fair and clean, the Sea a deep blue, the air tasting of salt and thyme.",           "weight": 30, "category": "clear" },
+      { "id": "sea_breeze",  "label": "Warm with a steady sea-breeze, the woods of Lindon at their greenest.",             "weight": 20, "category": "clear" },
+      { "id": "mist_morn",   "label": "Heavy sea-mist before dawn, clearing to brilliance by mid-morning.",                "weight": 15, "category": "mist" },
+      { "id": "showers",     "label": "Brief sunlit showers passing through — the Elves walk in them unhurried.",          "weight": 12, "category": "rain" },
+      { "id": "overcast_soft","label": "Mild overcast, the Sea silver, no rain — a day of quiet greys.",                  "weight": 10, "category": "overcast" },
+      { "id": "thunder_sea", "label": "Thunder walking far out on the Sea, never quite coming to land.",                   "weight": 8,  "category": "storm" },
+      { "id": "rain_warm",   "label": "Warm rain, the air rich with the scent of wet pine and sea-wrack.",                 "weight": 5,  "category": "rain" }
+    ],
+    "autumn": [
+      { "id": "fair_bright", "label": "Cool and bright, the Lindon woods in gold and russet to the water's edge.",         "weight": 22, "category": "clear" },
+      { "id": "sea_fog",     "label": "Dense fog off the Sea, the shore and the woods one unbroken grey.",                 "weight": 18, "category": "mist" },
+      { "id": "rain_steady", "label": "Steady cool rain from the west, falling through leaves onto wet roots.",            "weight": 18, "category": "rain" },
+      { "id": "wind_salt",   "label": "A hard salt wind, the Sea grey and heaving, leaves stripped in hours.",             "weight": 15, "category": "overcast" },
+      { "id": "overcast",    "label": "Low grey cloud and a damp chill, the light soft and failing early.",                "weight": 12, "category": "overcast" },
+      { "id": "showers_gold","label": "Showers and sunshine in turn — each break lighting the gold of the woods.",         "weight": 10, "category": "rain" },
+      { "id": "storm_sea",   "label": "An autumn sea-storm — great waves on the cliffs, rain driven almost horizontal.",   "weight": 5,  "category": "storm" }
+    ],
+    "winter": [
+      { "id": "cold_grey",   "label": "Cold and grey, the Sea lead-coloured, a steady raw wind off the water.",            "weight": 22, "category": "overcast" },
+      { "id": "rain_cold",   "label": "Cold rain from the Sea, unrelenting but never quite bitter.",                       "weight": 18, "category": "rain" },
+      { "id": "sea_mist_cold","label": "Cold sea-mist folding over the shore, the havens muffled in grey.",                "weight": 15, "category": "mist" },
+      { "id": "fair_cold",   "label": "Clear and cold, the Sea sharp blue, the Blue Mountains white in the east.",         "weight": 15, "category": "clear" },
+      { "id": "sleet_salt",  "label": "Sleet on a salt wind — uncomfortable weather even for Elves.",                      "weight": 12, "category": "rain" },
+      { "id": "snow_light",  "label": "A light fall of snow, uncommon here, dissolving where it meets the salt air.",      "weight": 8,  "category": "rain" },
+      { "id": "gale_west",   "label": "A great westerly gale, the sea white to the horizon, the Elven-lamps bright on the Havens.","weight": 7, "category": "storm" },
+      { "id": "still_bright","label": "A still bright day — rare in winter Lindon, the Sea almost glassy.",                "weight": 3,  "category": "clear" }
+    ]
+  }
+}

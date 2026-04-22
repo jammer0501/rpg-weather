@@ -1,0 +1,110 @@
+{
+  "_comment": "Shared predator lookup. Each predator has a name, a brief description for atmospheric rendering, and an array of region IDs where it is appropriate. The app selects a predator by filtering to the current region and rolling. If no regionally-appropriate predators exist, fall back to the generic set. Stat blocks are deliberately omitted — GMs should refer to the relevant Free League supplement for combat mechanics.",
+  "predators": [
+    {
+      "id": "brown_bear",
+      "name": "Brown bear",
+      "description": "A lone brown bear — huge, unhurried, dangerous only when threatened or guarding cubs.",
+      "regions": ["eriador", "wilderland", "misty-mountains", "mirkwood", "shire", "dunland", "rohan", "lindon"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "wild_boar",
+      "name": "Wild boar",
+      "description": "A tusked boar — territorial, bad-tempered, swift over short distances. A charge is a serious matter.",
+      "regions": ["eriador", "wilderland", "mirkwood", "shire", "dunland", "rohan", "gondor"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "wolf_pack",
+      "name": "Wolf pack",
+      "description": "A pack of grey wolves — lean with winter, coordinated, intelligent. They rarely attack without reason, but reasons in hard times are plentiful.",
+      "regions": ["eriador", "wilderland", "misty-mountains", "mirkwood", "dunland", "rohan"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "lone_wolf",
+      "name": "Lone wolf",
+      "description": "A single wolf — outcast from its pack, or a scout for one. Wary but desperate.",
+      "regions": ["eriador", "wilderland", "misty-mountains", "mirkwood", "dunland", "rohan"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "warg",
+      "name": "Warg",
+      "description": "A warg — larger than any wolf, yellow-eyed, intelligent beyond animal reason. Where one walks, others may follow.",
+      "regions": ["wilderland", "misty-mountains", "mirkwood", "dunland"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "warg_pack",
+      "name": "Warg pack",
+      "description": "A pack of wargs — hunting together with terrible purpose, perhaps bearing orc-riders.",
+      "regions": ["wilderland", "misty-mountains", "mirkwood"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "crebain",
+      "name": "Crebain",
+      "description": "A flock of great black crows — unnaturally attentive, circling, reporting to some watcher in the east.",
+      "regions": ["eriador", "wilderland", "rohan", "dunland", "gondor"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "great_eagle",
+      "name": "Great eagle",
+      "description": "An eagle of the Misty Mountains — vast-winged, piercing of eye, not an enemy but no friend to be presumed upon.",
+      "regions": ["misty-mountains", "wilderland", "rohan"],
+      "stat_reference": "Core rulebook — adversary statistics; a great eagle is as likely a saviour as a peril"
+    },
+    {
+      "id": "attercop",
+      "name": "Attercop",
+      "description": "A great spider — eight-legged, quick, venomous, with eyes that shine like cold lamps in the dim.",
+      "regions": ["mirkwood"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "attercop_brood",
+      "name": "Attercop brood",
+      "description": "Several great spiders hunting as one — webs strung between trunks, prey strung between webs.",
+      "regions": ["mirkwood"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "mountain_cat",
+      "name": "Mountain cat",
+      "description": "A great tawny cat of the high places — silent on the stones, patient, a single spring from concealment.",
+      "regions": ["misty-mountains", "dunland", "rohan"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "feral_dogs",
+      "name": "Pack of feral dogs",
+      "description": "Dogs gone wild, turned on by hunger and lost pack-order — more dangerous than wolves in some ways, for they do not fear men.",
+      "regions": ["eriador", "dunland", "rohan", "gondor"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "sea_beast",
+      "name": "A beast from the deep",
+      "description": "Something surfacing off the Lindon coast — long and dark, more serpent than fish, ancient eyes.",
+      "regions": ["lindon"],
+      "stat_reference": "GM discretion — no canonical stat block; treat as unique encounter"
+    },
+    {
+      "id": "cave_beast",
+      "name": "Cave-beast",
+      "description": "A creature of the deep places — blind, pale, toothed. What it is exactly, none can say.",
+      "regions": ["misty-mountains", "mirkwood"],
+      "stat_reference": "GM discretion — compose from core adversary building rules"
+    },
+    {
+      "id": "marsh_dweller",
+      "name": "Marsh-dweller",
+      "description": "A thing of the wet places — slick-skinned, unpleasantly humanoid, all teeth and grip.",
+      "regions": ["eriador", "wilderland", "gondor"],
+      "stat_reference": "GM discretion — compose from core adversary building rules"
+    }
+  ]
+}

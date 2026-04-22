@@ -1,0 +1,88 @@
+{
+  "id": "lookout-robbery",
+  "name": "Robbery / Ambush",
+  "event_target": "lookout",
+  "description": "Unlike Threats, which are hostile forces moving through the landscape, a Robbery or Ambush targets the fellowship specifically. Someone has watched the road and chosen them.",
+  "types": {
+    "bandits": {
+      "label": "Bandits",
+      "description": "Human outlaws — experienced, organised, willing to bargain but prepared to fight.",
+      "events": [
+        {
+          "id": "bandits_demand_toll",
+          "label": "Bandits stepping from cover ahead — a dozen, bows drawn. Their captain demands coin for passage; they look practised.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "Others are behind the fellowship; the trap is sprung.",
+          "notes": "Negotiation event. Paying is expedient; fighting is costly; parley may yield surprises."
+        },
+        {
+          "id": "bandits_ambush_arrows",
+          "label": "Arrows from the treeline — a bandit ambush, well-chosen ground, the fellowship caught in the open.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The first volley finds a target; a companion falls wounded.",
+          "notes": "Combat event. Lookout's Awareness roll determined whether surprise was avoided."
+        },
+        {
+          "id": "bandits_night_raid",
+          "label": "Bandits at night — slipping into camp while the watch drowses. Not a frontal attack; a theft, perhaps a kidnapping.",
+          "fatigue_success": 1,
+          "fatigue_failure": 2,
+          "on_eye": "Something crucial is gone in the morning — a pack, a companion, a weapon.",
+          "notes": "Watch event. Successful Awareness spots them; failure means theft is accomplished."
+        }
+      ]
+    },
+    "orc_ambush": {
+      "label": "Orc Ambush",
+      "description": "Not a patrol moving past — a deliberate attack prepared for the fellowship itself.",
+      "events": [
+        {
+          "id": "orc_ambush_sprung",
+          "label": "Orcs springing from concealment — a dozen or more, no warning, a carefully-chosen killing-ground. The fellowship is the prey.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "There is a captain among them — a larger, better-armed figure. The fight will be harder.",
+          "notes": "Combat event. Awareness determines whether the first blow lands."
+        },
+        {
+          "id": "orc_ambush_trapped_road",
+          "label": "The road ahead has been prepared — a tree felled, a pit concealed, stones rigged to fall. The fellowship is herded toward a trap.",
+          "fatigue_success": 2,
+          "fatigue_failure": 3,
+          "on_eye": "The trap claims a companion; gear or life at risk.",
+          "notes": "Investigation and combat event. Spotting the trap saves lives."
+        }
+      ]
+    },
+    "desperate": {
+      "label": "Starving Youth",
+      "description": "Not bandits by trade but by necessity — the desperate, the hungry, the refugees.",
+      "events": [
+        {
+          "id": "desperate_youth_demand",
+          "label": "A group of starving young people stepping into the road — thin, ragged, armed with knives and farm-tools. They do not want to fight; they want food.",
+          "fatigue_success": 0,
+          "fatigue_failure": 2,
+          "on_eye": "Violence breaks out despite their reluctance; blood that should not have spilled.",
+          "notes": "Moral event. Compassion costs rations; refusal may still cost fighting."
+        },
+        {
+          "id": "desperate_stealing",
+          "label": "A child, perhaps two, glimpsed fleeing with a pack — thieves, but thieves of the cold kind, driven by hunger. They will not stand and fight.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Awareness event. Pursuit possible; catching them is the small problem. Deciding what to do is the larger."
+        },
+        {
+          "id": "desperate_family",
+          "label": "A desperate family on the road — mother, father, several children, no fit protector. They do not threaten, but they ask, and their asking is a kind of demand.",
+          "fatigue_success": 0,
+          "fatigue_failure": 1,
+          "notes": "Moral event. Aid is a choice; the fellowship's generosity may echo later."
+        }
+      ]
+    }
+  }
+}
