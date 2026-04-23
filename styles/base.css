@@ -172,6 +172,64 @@ select {
   border-radius: var(--radius-btn, 0);
 }
 
+/* ─── Tab bar ────────────────────────────────────────────────────────────── */
+
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+  /* Sit above page content; Blade Runner scanline overlay (z-index 9999) is
+     pointer-events:none so it won't block taps even though it renders on top */
+  z-index: 100;
+  /* Safe-area inset for notched phones */
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.tab-btn {
+  flex: 1;
+  min-height: 52px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--color-label);
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+}
+
+.tab-btn.is-active {
+  color: var(--color-accent);
+}
+
+/* Ensure content clears the fixed tab bar. The 4rem already in .app handles
+   most cases; add safe-area to cover notched phones. */
+.app {
+  padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0));
+}
+
+/* ─── Tab stub panels ─────────────────────────────────────────────────────── */
+
+.tab-stub-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.tab-stub-label {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--color-label);
+  font-style: italic;
+}
+
 /* ─── Mode-conditional visibility ────────────────────────────────────────── */
 
 /* Flourish is a visual asset, not a form control — CSS suppression is fine. */
@@ -182,3 +240,234 @@ body.mode-blade-runner .result-flourish {
 /* #season-group and #date-group are suppressed via the hidden attribute by
    app.js, not CSS. Form controls that are display:none still hold live state;
    hidden makes them semantically absent. */
+
+/* ─── Checkbox label ─────────────────────────────────────────────────────── */
+
+.check-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.check-label input[type="checkbox"] {
+  width: 1.1em;
+  height: 1.1em;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--color-accent);
+}
+
+/* ─── Camp result ─────────────────────────────────────────────────────────── */
+
+.camp-result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.camp-die-result {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--color-label);
+}
+
+.camp-result[data-outcome-type="evil"] .camp-die-result {
+  color: var(--color-accent);
+}
+
+.camp-event-label {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.camp-event-variant {
+  font-family: var(--font-body);
+  font-size: var(--font-size-result, 1.1rem);
+  line-height: 1.65;
+}
+
+/* ─── Event targets ──────────────────────────────────────────────────────── */
+
+.event-targets {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.event-target-btn {
+  flex: 1;
+  min-height: 56px;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  background: var(--color-btn-bg);
+  color: var(--color-btn-text);
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  border-radius: var(--radius-btn, 0);
+  transition: background 0.15s, color 0.15s;
+}
+
+/* ─── Journey result ──────────────────────────────────────────────────────── */
+
+.journey-result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.journey-meta {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--color-label);
+}
+
+.journey-event-label {
+  font-family: var(--font-body);
+  font-size: var(--font-size-result, 1.1rem);
+  line-height: 1.65;
+}
+
+.journey-fatigue {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--color-label);
+}
+
+.journey-on-eye {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  border-left: 2px solid var(--color-accent);
+  padding-left: 0.75rem;
+  line-height: 1.5;
+}
+
+/* ─── GM notes collapsible ──────────────────────────────────────────────── */
+
+.journey-notes summary {
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-label);
+  list-style: none;
+  padding: 0.25rem 0;
+  user-select: none;
+}
+
+.journey-notes summary::-webkit-details-marker { display: none; }
+
+.journey-notes p {
+  margin-top: 0.375rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-label);
+  line-height: 1.55;
+}
+
+/* ─── Predator section ──────────────────────────────────────────────────── */
+
+.predator-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.secondary-btn {
+  min-height: 36px;
+  padding: 0 0.875rem;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  background: none;
+  color: var(--color-label);
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-btn, 0);
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.predator-result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-input-bg);
+  border-radius: var(--radius-input, 0);
+}
+
+.predator-name {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.predator-desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.predator-ref {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--color-label);
+}
+
+/* ─── Journey actions ──────────────────────────────────────────────────── */
+
+.journey-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.journey-retarget {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.journey-retarget .secondary-btn {
+  flex: 1;
+}
+
+/* ─── Quick lookups section ─────────────────────────────────────────────── */
+
+.lookups-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.lookups-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lookups-btns .secondary-btn {
+  flex: 1;
+}
+
+.lookup-type {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-label);
+}
+
+.lookup-rations {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--color-label);
+}

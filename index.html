@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f3e7d0" id="meta-theme-color">
-  <title>RPG Weather</title>
+  <title>Journeys of the Wild</title>
   <link rel="manifest" href="manifest.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,6 +34,8 @@
       </nav>
     </header>
 
+  <!-- ── Weather tab ─────────────────────────────────────────────────── -->
+  <div class="tab-panel" id="tab-weather">
     <main class="app-main">
 
       <section class="controls" aria-label="Weather settings">
@@ -53,7 +55,6 @@
           </select>
         </div>
 
-
       </section>
 
       <div class="roll-section">
@@ -72,6 +73,143 @@
       </section>
 
     </main>
+  </div>
+
+  <!-- ── Journey tab ──────────────────────────────────────────────────── -->
+  <div class="tab-panel" id="tab-journey" hidden>
+    <main class="app-main">
+
+      <section class="controls" aria-label="Journey settings">
+        <div class="control-group">
+          <label for="journey-region-select">Region</label>
+          <select id="journey-region-select"></select>
+        </div>
+        <div class="control-group">
+          <label for="journey-season-select">Season</label>
+          <select id="journey-season-select">
+            <option value="spring">Spring</option>
+            <option value="summer">Summer</option>
+            <option value="autumn">Autumn</option>
+            <option value="winter">Winter</option>
+          </select>
+        </div>
+      </section>
+
+      <div class="event-targets">
+        <button class="event-target-btn" data-target="scout">Scout</button>
+        <button class="event-target-btn" data-target="lookout">Lookout</button>
+        <button class="event-target-btn" data-target="hunter">Hunter</button>
+      </div>
+
+      <section class="journey-result" id="journey-result" hidden aria-live="polite" aria-atomic="true">
+        <p class="journey-meta" id="journey-meta"></p>
+        <p class="journey-event-label" id="journey-event-label"></p>
+        <p class="journey-fatigue" id="journey-fatigue"></p>
+        <button class="secondary-btn" id="journey-weather-link" hidden>See weather details</button>
+        <p class="journey-on-eye" id="journey-on-eye" hidden></p>
+        <details class="journey-notes" id="journey-notes" hidden>
+          <summary>GM notes</summary>
+          <p id="journey-notes-text"></p>
+        </details>
+        <div class="predator-section" id="predator-section" hidden>
+          <button class="secondary-btn roll-predator-btn" id="roll-predator-btn">Roll predator</button>
+          <div class="predator-result" id="predator-result" hidden>
+            <p class="predator-name" id="predator-name"></p>
+            <p class="predator-desc" id="predator-desc"></p>
+            <p class="predator-ref" id="predator-ref"></p>
+          </div>
+        </div>
+        <div class="journey-actions">
+          <button class="roll-btn" id="journey-roll-again-btn">Roll again</button>
+          <div class="journey-retarget">
+            <button class="secondary-btn" data-target="scout">Scout</button>
+            <button class="secondary-btn" data-target="lookout">Lookout</button>
+            <button class="secondary-btn" data-target="hunter">Hunter</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="lookups-section">
+        <div class="lookups-btns">
+          <button class="secondary-btn" id="lookup-prey-btn">Roll prey</button>
+          <button class="secondary-btn" id="lookup-predator-btn">Roll predator</button>
+          <button class="secondary-btn" id="lookup-shadow-btn">Roll shadow</button>
+        </div>
+        <div class="predator-result" id="lookup-result" hidden>
+          <p class="lookup-type" id="lookup-type"></p>
+          <p class="predator-name" id="lookup-name"></p>
+          <p class="predator-desc" id="lookup-desc"></p>
+          <p class="lookup-rations" id="lookup-rations" hidden></p>
+          <p class="predator-ref" id="lookup-ref"></p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ── Camp tab ─────────────────────────────────────────────────────── -->
+  <div class="tab-panel" id="tab-camp" hidden>
+    <main class="app-main">
+
+      <section class="controls" aria-label="Camp settings">
+        <div class="control-group">
+          <label for="camp-region-select">Region</label>
+          <select id="camp-region-select"></select>
+        </div>
+        <div class="control-group">
+          <label for="camp-season-select">Season</label>
+          <select id="camp-season-select">
+            <option value="spring">Spring</option>
+            <option value="summer">Summer</option>
+            <option value="autumn">Autumn</option>
+            <option value="winter">Winter</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label class="check-label" for="camp-favoured">
+            <input type="checkbox" id="camp-favoured">
+            Scout's Explore roll succeeded (favoured)
+          </label>
+        </div>
+      </section>
+
+      <div class="roll-section">
+        <button class="roll-btn" id="camp-roll-btn">Roll camp event</button>
+      </div>
+
+      <section class="camp-result" id="camp-result" hidden aria-live="polite" aria-atomic="true">
+        <div class="result-flourish" id="camp-flourish" aria-hidden="true" hidden></div>
+        <p class="camp-die-result" id="camp-die-result"></p>
+        <p class="camp-event-label" id="camp-event-label"></p>
+        <p class="camp-event-variant" id="camp-event-variant"></p>
+        <details class="journey-notes" id="camp-consequences" hidden>
+          <summary>Consequences</summary>
+          <p id="camp-consequences-text"></p>
+        </details>
+      </section>
+
+      <div class="lookups-section">
+        <div class="lookups-btns">
+          <button class="secondary-btn" id="camp-lookup-predator-btn">Roll predator</button>
+          <button class="secondary-btn" id="camp-lookup-shadow-btn">Roll shadow</button>
+        </div>
+        <div class="predator-result" id="camp-lookup-result" hidden>
+          <p class="lookup-type" id="camp-lookup-type"></p>
+          <p class="predator-name" id="camp-lookup-name"></p>
+          <p class="predator-desc" id="camp-lookup-desc"></p>
+          <p class="predator-ref" id="camp-lookup-ref"></p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ── Tab bar ───────────────────────────────────────────────────────── -->
+  <nav class="tab-bar" aria-label="App sections">
+    <button class="tab-btn is-active" data-tab="weather" aria-pressed="true">Weather</button>
+    <button class="tab-btn" data-tab="journey" aria-pressed="false">Journey</button>
+    <button class="tab-btn" data-tab="camp" aria-pressed="false">Camp</button>
+  </nav>
 
   </div>
 

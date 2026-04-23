@@ -1,5 +1,5 @@
 // BUMP CACHE_VERSION when shipping content or code changes.
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v7';
 const SHELL_CACHE   = `rpg-weather-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `rpg-weather-runtime-${CACHE_VERSION}`;
 const DEBUG = false;
@@ -13,7 +13,14 @@ function log(...args) {
 const SHELL_URLS = [
   'index.html',
   'app.js',
+  'state.js',
+  'weather.js',
+  'tabs.js',
   'roller.js',
+  'predators.js',
+  'journey.js',
+  'camp.js',
+  'dice.js',
   'manifest.webmanifest',
   'styles/base.css',
   'styles/one-ring.css',
@@ -37,6 +44,7 @@ const DATA_URLS = [
   'data/regions/rohan.json',
   'data/regions/shire.json',
   'data/regions/wilderland.json',
+  'data/journey-events/manifest.json',
   'data/journey-events/hunter.json',
   'data/journey-events/lookout-battle-site.json',
   'data/journey-events/lookout-predators.json',
@@ -50,6 +58,9 @@ const DATA_URLS = [
   'data/journey-events/scout-routing.json',
   'data/journey-events/scout-ruin.json',
   'data/journey-events/scout-settlement.json',
+  'data/journey-events/prey.json',
+  'data/journey-events/shadow.json',
+  'data/journey-events/camp-events.json',
 ];
 
 // ── Lifecycle ──────────────────────────────────────────────────────────────

@@ -1,199 +1,45 @@
-import { roll } from './roller.js';
-
-// ── Module state ───────────────────────────────────────────────────────────
-
-const state = {
-  mode:        'one-ring',
-  regionId:    'eriador',
-  season:      'spring',
-  regions:     {},
-  transitions: {},
-  result:      null,   // { label, meta } — current display only, never persisted
-};
-
-// ── localStorage ───────────────────────────────────────────────────────────
-
-const UI_KEY = 'rpgw:ui';
-
-function tripletKey() {
-  return `rpgw:${state.mode}:${state.regionId}:${state.season}`;
-}
-
-function defaultTriplet() {
-  return { prevCategory: null, resultLabel: null };
-}
-
-function loadTriplet() {
-  try {
-    const raw = localStorage.getItem(tripletKey());
-    return raw ? { ...defaultTriplet(), ...JSON.parse(raw) } : defaultTriplet();
-  } catch {
-    return defaultTriplet();
-  }
-}
-
-function saveTriplet(data) {
-  localStorage.setItem(tripletKey(), JSON.stringify(data));
-}
-
-function saveUI() {
-  localStorage.setItem(UI_KEY, JSON.stringify({
-    mode:     state.mode,
-    regionId: state.regionId,
-    season:   state.season,
-  }));
-}
-
-// ── DOM refs ───────────────────────────────────────────────────────────────
-
-const $ = id => document.getElementById(id);
-
-const els = {
-  body:           document.body,
-  themeColor:     $('meta-theme-color'),
-  modeNav:        document.querySelector('.mode-nav'),
-  modeBtns:       document.querySelectorAll('.mode-btn'),
-  regionSelect:   $('region-select'),
-  seasonGroup:    $('season-group'),
-  seasonSelect:   $('season-select'),
-  rollBtn:        $('roll-btn'),
-  result:         $('result'),
-  resultFlourish: $('result-flourish'),
-  resultMeta:     $('result-meta'),
-  resultLabel:    $('result-label'),
-  resetBtn:       $('reset-btn'),
-};
-
-// ── Formatting ─────────────────────────────────────────────────────────────
-
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-function buildMeta() {
-  if (state.mode === 'one-ring') {
-    const regionName = state.regions[state.regionId]?.name ?? '';
-    return `In ${regionName}, ${capitalize(state.season)} —`;
-  }
-  return null;  // Blade Runner: no meta line
-}
-
-// ── UI population ──────────────────────────────────────────────────────────
-
-function populateRegionSelect() {
-  const filtered = Object.values(state.regions).filter(r => r.mode === state.mode);
-  els.regionSelect.innerHTML = filtered
-    .map(r => `<option value="${r.id}">${r.name}</option>`)
-    .join('');
-  els.regionSelect.value = state.regionId;
-}
-
-// ── State → UI sync ────────────────────────────────────────────────────────
-
-function syncModeUI() {
-  const isBR = state.mode === 'blade-runner';
-  els.body.className     = `mode-${state.mode}`;
-  els.themeColor.content = isBR ? '#0a0e14' : '#f3e7d0';
-
-  els.modeBtns.forEach(btn => {
-    const active = btn.dataset.mode === state.mode;
-    btn.classList.toggle('is-active', active);
-    btn.setAttribute('aria-pressed', String(active));
-  });
-
-  els.seasonGroup.hidden = isBR;
-  els.seasonSelect.value = state.season;
-  els.rollBtn.textContent = isBR ? 'Generate report' : 'Roll weather';
-}
-
-// ── Result rendering ───────────────────────────────────────────────────────
-
-function renderResult(label) {
-  const meta = buildMeta();
-  state.result = { label, meta };
-  els.resultLabel.textContent = label;
-  els.resultMeta.textContent  = meta ?? '';
-  els.resultMeta.hidden       = meta === null;
-  els.result.hidden = false;
-}
-
-function clearResult() {
-  state.result = null;
-  els.result.hidden = true;
-}
-
-function restoreResult() {
-  const triplet = loadTriplet();
-  if (triplet.resultLabel) {
-    renderResult(triplet.resultLabel);
-  } else {
-    clearResult();
-  }
-}
-
-// ── Rolling ────────────────────────────────────────────────────────────────
-
-function doRoll() {
-  const region  = state.regions[state.regionId];
-  const entries = region.seasons[state.season];
-  const triplet = loadTriplet();
-
-  const entry = roll(entries, triplet.prevCategory, state.transitions);
-
-  saveTriplet({ prevCategory: entry.category, resultLabel: entry.label });
-  renderResult(entry.label);
-}
-
-// ── Event handlers ─────────────────────────────────────────────────────────
-
-function onModeClick(e) {
-  const btn = e.target.closest('.mode-btn');
-  if (!btn || btn.dataset.mode === state.mode) return;
-
-  state.mode     = btn.dataset.mode;
-  state.season   = state.mode === 'blade-runner' ? 'any' : 'spring';
-  state.regionId = Object.values(state.regions).find(r => r.mode === state.mode).id;
-
-  syncModeUI();
-  populateRegionSelect();
-  restoreResult();
-  saveUI();
-}
-
-function onRegionChange() {
-  state.regionId = els.regionSelect.value;
-  restoreResult();
-  saveUI();
-}
-
-function onSeasonChange() {
-  state.season = els.seasonSelect.value;
-  restoreResult();
-  saveUI();
-}
-
-function onReset() {
-  saveTriplet(defaultTriplet());
-  clearResult();
-}
+import { state } from './state.js';
+import { UI_KEY, initWeather } from './weather.js';
+import { initTabs } from './tabs.js';
+import { initJourney } from './journey.js';
+import { initCamp } from './camp.js';
 
 // ── Data loading ───────────────────────────────────────────────────────────
 
 async function loadData() {
-  const [manifest, transitionsData] = await Promise.all([
+  const [weatherManifest, journeyManifest, transitionsData] = await Promise.all([
     fetch('data/manifest.json').then(r => r.json()),
+    fetch('data/journey-events/manifest.json').then(r => r.json()),
     fetch('data/transitions.json').then(r => r.json()),
   ]);
-  state.transitions = transitionsData;
+  state.transitions    = transitionsData;
+  state.journeyManifest = journeyManifest;
 
-  const regionData = await Promise.all(
-    manifest.regions.map(id =>
+  const rollableIds = [
+    ...journeyManifest.scout_events,
+    ...journeyManifest.lookout_events,
+    ...journeyManifest.hunter_events,
+  ];
+
+  const [regionData, journeyData, predatorsFile, preyFile, shadowFile, campEventsFile] = await Promise.all([
+    Promise.all(weatherManifest.regions.map(id =>
       fetch(`data/regions/${id}.json`).then(r => r.json())
-    )
-  );
-  for (const region of regionData) {
-    state.regions[region.id] = region;
-  }
+    )),
+    Promise.all(rollableIds.map(id =>
+      fetch(`data/journey-events/${id}.json`).then(r => r.json())
+    )),
+    fetch('data/journey-events/predators.json').then(r => r.json()),
+    fetch('data/journey-events/prey.json').then(r => r.json()),
+    fetch('data/journey-events/shadow.json').then(r => r.json()),
+    fetch('data/journey-events/camp-events.json').then(r => r.json()),
+  ]);
+
+  for (const region of regionData)  state.regions[region.id]      = region;
+  for (const file   of journeyData) state.journeyFiles[file.id]   = file;
+  state.predators  = predatorsFile.predators;
+  state.prey       = preyFile.prey;
+  state.shadow     = shadowFile.shadow;
+  state.campEvents = campEventsFile;
 }
 
 // ── Init ───────────────────────────────────────────────────────────────────
@@ -202,9 +48,9 @@ async function init() {
   try {
     await loadData();
   } catch (err) {
-    console.error('Failed to load weather data:', err);
+    console.error('Failed to load data:', err);
     document.querySelector('.app').textContent =
-      'Could not load weather data. Check your connection and reload.';
+      'Could not load data. Check your connection and reload.';
     return;
   }
 
@@ -217,15 +63,10 @@ async function init() {
     }
   } catch { /* corrupted storage — fall through to defaults */ }
 
-  populateRegionSelect();
-  syncModeUI();
-  restoreResult();
-
-  els.modeNav.addEventListener('click', onModeClick);
-  els.regionSelect.addEventListener('change', onRegionChange);
-  els.seasonSelect.addEventListener('change', onSeasonChange);
-  els.rollBtn.addEventListener('click', doRoll);
-  els.resetBtn.addEventListener('click', onReset);
+  initWeather();
+  initJourney();
+  initCamp();
+  initTabs();
 }
 
 init();

@@ -159,6 +159,94 @@ body.mode-one-ring .result-label {
   color: var(--color-text);
 }
 
+/* ── Tab bar ──────────────────────────────────────────────────────────── */
+
+body.mode-one-ring .tab-bar {
+  border-top-color: var(--color-border);
+}
+
+body.mode-one-ring .tab-btn {
+  font-style: italic;
+  font-size: 0.95rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+body.mode-one-ring .tab-btn.is-active {
+  color: var(--color-accent);
+}
+
+/* ── Camp tab ─────────────────────────────────────────────────────────── */
+
+body.mode-one-ring .check-label {
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+body.mode-one-ring .camp-event-label {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--color-accent);
+}
+
+body.mode-one-ring .camp-event-variant {
+  font-style: italic;
+}
+
+body.mode-one-ring .camp-result[data-outcome-type="good"] .camp-die-result {
+  color: #7a5c18;  /* warm amber — distinct from the red-ochre accent */
+}
+
+/* ── Journey tab ──────────────────────────────────────────────────────── */
+
+body.mode-one-ring .event-target-btn {
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+body.mode-one-ring .journey-meta {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-style: italic;
+  color: var(--color-accent);
+  font-size: 0.95rem;
+}
+
+body.mode-one-ring .journey-event-label {
+  font-style: italic;
+}
+
+body.mode-one-ring .journey-notes summary {
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.9rem;
+}
+
+body.mode-one-ring .secondary-btn {
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+body.mode-one-ring .secondary-btn:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+body.mode-one-ring .predator-name {
+  font-style: italic;
+  font-size: 1rem;
+}
+
+body.mode-one-ring .lookup-type {
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.9rem;
+  color: var(--color-accent);
+}
+
 /* ── Reset button ─────────────────────────────────────────────────────── */
 
 body.mode-one-ring .reset-btn {

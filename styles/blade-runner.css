@@ -163,6 +163,23 @@ body.mode-blade-runner .result-label {
   letter-spacing: 0.01em;
 }
 
+/* ── Tab bar ──────────────────────────────────────────────────────────── */
+
+body.mode-blade-runner .tab-bar {
+  border-top-color: rgba(0, 229, 255, 0.15);
+}
+
+body.mode-blade-runner .tab-btn {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+body.mode-blade-runner .tab-btn.is-active {
+  color: var(--color-accent);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+}
+
 /* ── Reset button ─────────────────────────────────────────────────────── */
 
 body.mode-blade-runner .reset-btn {
