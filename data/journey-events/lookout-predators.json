@@ -11,7 +11,8 @@
       "fatigue_success": 0,
       "fatigue_failure": 1,
       "on_eye": "The beast catches the fellowship's scent and turns toward them.",
-      "notes": "Avoidance event. Lookup a predator from the Predators data file for the region. Stealth prevents escalation."
+      "notes": "Avoidance event. Lookup a predator from the Predators data file for the region. Stealth prevents escalation.",
+      "triggers_predator": true
     },
     {
       "id": "predator_stalking",
@@ -19,7 +20,8 @@
       "fatigue_success": 1,
       "fatigue_failure": 2,
       "on_eye": "The predator strikes without warning; 1 shadow point as the fellowship realises how long it has been hunting them.",
-      "notes": "Tension event. Looking behind, changing route, or standing to fight all options."
+      "notes": "Tension event. Looking behind, changing route, or standing to fight all options.",
+      "triggers_predator": true
     },
     {
       "id": "predator_pack",
@@ -27,7 +29,8 @@
       "fatigue_success": 2,
       "fatigue_failure": 3,
       "on_eye": "The pack is larger than first counted, and more cunning.",
-      "notes": "Serious threat. Make for high ground, shelter, or prepare for combat."
+      "notes": "Serious threat. Make for high ground, shelter, or prepare for combat.",
+      "triggers_predator": true
     },
     {
       "id": "predator_feeding",
@@ -35,7 +38,8 @@
       "fatigue_success": 1,
       "fatigue_failure": 2,
       "on_eye": "The predator's meal is a fellow traveller, and its kin may be near.",
-      "notes": "Tactical choice. Wide detour avoids; direct passage risks combat."
+      "notes": "Tactical choice. Wide detour avoids; direct passage risks combat.",
+      "triggers_predator": true
     },
     {
       "id": "predator_injured",
@@ -43,7 +47,8 @@
       "fatigue_success": 1,
       "fatigue_failure": 3,
       "on_eye": "The beast is already charging.",
-      "notes": "Unpredictable encounter. Mercy killing may be the wise choice."
+      "notes": "Unpredictable encounter. Mercy killing may be the wise choice.",
+      "triggers_predator": true
     },
     {
       "id": "predator_warning",
@@ -51,7 +56,8 @@
       "fatigue_success": 0,
       "fatigue_failure": 2,
       "on_eye": "The owner arrives at the worst possible moment.",
-      "notes": "Hazard-warning event. Detour possible; speed also a valid answer."
+      "notes": "Hazard-warning event. Detour possible; speed also a valid answer.",
+      "triggers_predator": true
     }
   ]
 }

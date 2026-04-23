@@ -1,0 +1,53 @@
+{
+  "_comment": "Shared prey lookup. Used by Hunter events that yield food. The Hunter finds one of these when a hunting or foraging roll succeeds. Filtered by region — the same principle as the predators file — so a Hunter in the Shire finds rabbits and pigeons, not wild hogs. Stat blocks are not reproduced; a prey creature rarely needs combat statistics.",
+  "prey": [
+    {
+      "id": "deer",
+      "name": "Deer",
+      "description": "A red or roe deer — substantial meat, hard to catch, a real prize for the hunter who can stalk quietly. One deer feeds the fellowship well for several days.",
+      "regions": ["eriador", "wilderland", "misty-mountains", "mirkwood", "shire", "lindon", "dunland", "rohan", "gondor"],
+      "rations_yielded": "1d6 + 2",
+      "stat_reference": "No combat stats required; resolve as a Hunting roll"
+    },
+    {
+      "id": "rabbits",
+      "name": "Rabbits",
+      "description": "Rabbits or hares — plentiful, taken easily with snare or bow. Small meat but honest food, and every hunter knows their ways.",
+      "regions": ["eriador", "wilderland", "shire", "lindon", "dunland", "rohan", "gondor"],
+      "rations_yielded": "1d3",
+      "stat_reference": "No combat stats required"
+    },
+    {
+      "id": "fowl",
+      "name": "Fowl",
+      "description": "Pigeon, pheasant, grouse, or wild duck depending on the country — taken by bow or net. Light meat, but quick to cook over a travelling fire.",
+      "regions": ["eriador", "wilderland", "shire", "lindon", "dunland", "rohan", "gondor", "mirkwood"],
+      "rations_yielded": "1d3",
+      "stat_reference": "No combat stats required"
+    },
+    {
+      "id": "fish",
+      "name": "Fish",
+      "description": "Trout, perch, pike, or salmon depending on the water — patient work, but reliable where the streams are clean and the hunter has line and hook.",
+      "regions": ["eriador", "wilderland", "misty-mountains", "shire", "lindon", "dunland", "rohan", "gondor", "lothlorien"],
+      "rations_yielded": "1d3",
+      "stat_reference": "No combat stats required"
+    },
+    {
+      "id": "goats",
+      "name": "Wild goats",
+      "description": "Mountain goats or wild kin of the hill-breeds — tough meat, hard to stalk on the broken ground they favour, but a real catch for the high-country hunter.",
+      "regions": ["misty-mountains", "dunland", "rohan"],
+      "rations_yielded": "1d6",
+      "stat_reference": "No combat stats required"
+    },
+    {
+      "id": "wild_hogs",
+      "name": "Wild hogs",
+      "description": "A wild hog or boar, taken clean — substantial meat, dangerous to hunt, a test of skill and nerve. The wrong kill can become a gored hunter.",
+      "regions": ["eriador", "wilderland", "mirkwood", "dunland", "rohan", "gondor"],
+      "rations_yielded": "1d6 + 1",
+      "stat_reference": "A cornered boar may require combat stats — see wild_boar in predators.json"
+    }
+  ]
+}

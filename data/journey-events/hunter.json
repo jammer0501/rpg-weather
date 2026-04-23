@@ -28,7 +28,8 @@
           "fatigue_success": 1,
           "fatigue_failure": 2,
           "on_eye": "Whatever disturbed the fishing now turns on the hunter; roll a predator.",
-          "notes": "Cross-reference to Predators data file on Eye of Sauron."
+          "notes": "Cross-reference to Predators data file on Eye of Sauron.",
+          "triggers_predator": true
         }
       ]
     },
@@ -71,7 +72,8 @@
           "fatigue_success": 2,
           "fatigue_failure": 3,
           "on_eye": "The predator attacks before the hunter can retreat.",
-          "notes": "Cross-reference to Predators data file. Avoidance possible with Stealth; combat is the worst outcome."
+          "notes": "Cross-reference to Predators data file. Avoidance possible with Stealth; combat is the worst outcome.",
+          "triggers_predator": true
         }
       ]
     },
@@ -134,7 +136,8 @@
           "fatigue_success": 1,
           "fatigue_failure": 2,
           "on_eye": "The guardian is a predator; roll one from the Predators data file.",
-          "notes": "Encounter event. Negotiation with wildlife is limited."
+          "notes": "Encounter event. Negotiation with wildlife is limited.",
+          "triggers_predator": true
         }
       ]
     },

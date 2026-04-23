@@ -1,0 +1,47 @@
+{
+  "_comment": "Shared shadow lookup. Used by event handlers that produce a servant-of-Shadow encounter — primarily Lookout → Threats and Camp Events on the Eye of Sauron outcome. Filtered by region: orc-kind range widely but not into every realm; attercops belong to Mirkwood; wargs haunt the Misty Mountains and the Wild. Stat blocks are not reproduced; GMs refer to the core rulebook or relevant supplement.",
+  "shadow": [
+    {
+      "id": "trolls",
+      "name": "Trolls",
+      "description": "Stone-skinned, slow-witted, dangerous — trolls range at night and hide from the sun. A pair or a small party; one alone is already a grave threat, and trolls rarely walk without kin or master nearby.",
+      "regions": ["eriador", "wilderland", "misty-mountains", "mirkwood"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "orcs",
+      "name": "Orcs",
+      "description": "Orc-kind on the move — a scouting party, a patrol, or a full war-band. Swift in the dark, cruel in their ways, servants of the Shadow in its many forms.",
+      "regions": ["eriador", "wilderland", "misty-mountains", "mirkwood", "dunland", "rohan", "gondor"],
+      "stat_reference": "Core rulebook — adversary statistics. Use Uruk-hai or Mordor Orcs from Hands of the White Wizard if appropriate to the region."
+    },
+    {
+      "id": "wargs",
+      "name": "Wargs",
+      "description": "Wolf-kin intelligent beyond animal reason, often bearing orc-riders. Yellow-eyed, cunning, hunting in packs. Where one warg walks, more follow.",
+      "regions": ["wilderland", "misty-mountains", "mirkwood", "dunland", "rohan"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "evil_men",
+      "name": "Evil Men",
+      "description": "Men of the East or the South, or kin turned to the Shadow's service — soldiers, emissaries, spies. A patrol in foreign livery, a rider with hidden purpose, or a raiding party from beyond the known lands.",
+      "regions": ["eriador", "wilderland", "dunland", "rohan", "gondor"],
+      "stat_reference": "Core rulebook — adversary statistics. Hands of the White Wizard for Dunlendings, Easterlings, and Haradrim of Rohan / Gondor campaigns."
+    },
+    {
+      "id": "undead",
+      "name": "Undead Spirits",
+      "description": "Wights, barrow-wraiths, restless dead given form by Shadow — cold, ancient, hungry for the warmth of the living. The worst kind of threat, against which steel alone may not avail.",
+      "regions": ["eriador", "wilderland", "misty-mountains", "mirkwood", "gondor"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    },
+    {
+      "id": "attercops",
+      "name": "Attercops",
+      "description": "Great spiders of Mirkwood, kin to the spawn of Ungoliant — eight-legged, venomous, cunning, with eyes that shine like cold lamps in the dim. Rarely found outside the great wood.",
+      "regions": ["mirkwood"],
+      "stat_reference": "Core rulebook — adversary statistics"
+    }
+  ]
+}

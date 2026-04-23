@@ -29,7 +29,8 @@
           "fatigue_success": 1,
           "fatigue_failure": 3,
           "on_eye": "The pack returns while the fellowship is still nearby.",
-          "notes": "Time-sensitive event. Stealth possible; staying is a gamble."
+          "notes": "Time-sensitive event. Stealth possible; staying is a gamble.",
+          "triggers_predator": true
         },
         {
           "id": "cave_bear",
@@ -37,7 +38,8 @@
           "fatigue_success": 1,
           "fatigue_failure": 3,
           "on_eye": "A sow with cubs — any disturbance brings a mother's fury.",
-          "notes": "Avoidance strongly preferred. Moving on quietly is the wise choice."
+          "notes": "Avoidance strongly preferred. Moving on quietly is the wise choice.",
+          "triggers_predator": true
         },
         {
           "id": "cave_trapped",

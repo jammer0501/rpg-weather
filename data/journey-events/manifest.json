@@ -22,6 +22,8 @@
     "camp-events"
   ],
   "shared": [
-    "predators"
+    "predators",
+    "shadow",
+    "prey"
   ]
 }
