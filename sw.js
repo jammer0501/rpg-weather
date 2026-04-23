@@ -1,5 +1,5 @@
 // BUMP CACHE_VERSION when shipping content or code changes.
-const CACHE_VERSION = 'v7';
+const CACHE_VERSION = 'v8';
 const SHELL_CACHE   = `rpg-weather-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `rpg-weather-runtime-${CACHE_VERSION}`;
 const DEBUG = false;
@@ -26,6 +26,7 @@ const SHELL_URLS = [
   'styles/one-ring.css',
   'styles/blade-runner.css',
   'assets/flourish.svg',
+  'assets/events-app-icon.png',
 ];
 
 // Data — stale-while-revalidate. Served from cache immediately; updated in
