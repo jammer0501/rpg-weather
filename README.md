@@ -1,6 +1,6 @@
-# Journeys of the Wild
+# RPG Companion
 
-Weather roller for tabletop RPGs. Supports The One Ring and Blade Runner modes.
+Weather and events roller for tabletop RPGs. Supports The One Ring and Blade Runner modes.
 
 ## Running locally
 
