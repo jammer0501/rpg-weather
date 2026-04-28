@@ -1,6 +1,10 @@
-import { state } from './state.js';
-import { rollWeather, saveUI } from './weather.js';
+// Journey tab — rolls scout, lookout and hunter events, displays fatigue costs,
+// handles predator triggers, and provides standalone prey/predator/shadow lookups.
+
+import { state } from '../state.js';
+import { rollWeather, saveUI } from '../weather/weather.js';
 import { rollPredator, rollPrey, rollShadow } from './predators.js';
+import { pickRandom, pickEventFromFile, WEATHER_FATIGUE } from './events.js';
 
 // ── DOM refs ───────────────────────────────────────────────────────────────
 
@@ -40,43 +44,28 @@ const els = {
 
 // ── Module state ──────────────────────────────────────────────────────────
 
+// Tracks the last event target so "Roll again" can repeat without the user
+// having to re-select a target button.
 let lastTarget = null;
 
 // ── Helpers ────────────────────────────────────────────────────────────────
-
-function pickRandom(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
-}
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+// Resolves file IDs for a given target (scout/lookout/hunter) from the manifest,
+// then looks each up in the pre-loaded journeyFiles map.
 function getTargetFiles(target) {
   const ids = state.journeyManifest?.[`${target}_events`] ?? [];
   return ids.map(id => state.journeyFiles[id]).filter(Boolean);
 }
 
-function pickEventFromFile(file) {
-  if (file.events) {
-    return { event: pickRandom(file.events), typeName: null };
-  }
-  const typeKey = pickRandom(Object.keys(file.types));
-  const type    = file.types[typeKey];
-  return { event: pickRandom(type.events), typeName: type.label };
-}
-
-// Weather category → journey fatigue (lookout-weather case)
-const WEATHER_FATIGUE = {
-  clear:    { success: 0, failure: 1 },
-  overcast: { success: 0, failure: 1 },
-  mist:     { success: 1, failure: 2 },
-  rain:     { success: 1, failure: 2 },
-  storm:    { success: 2, failure: 3 },
-};
-
 // ── Rendering ──────────────────────────────────────────────────────────────
 
+// Renders a predator inline within the journey result panel. This is separate
+// from renderLookup because it writes to different DOM elements (the predator
+// section embedded in the event result, not the standalone lookup panel).
 function showPredator(predator, nameEl, descEl, refEl, resultEl) {
   nameEl.textContent = predator.name;
   descEl.textContent = predator.description;
@@ -84,6 +73,8 @@ function showPredator(predator, nameEl, descEl, refEl, resultEl) {
   resultEl.hidden    = false;
 }
 
+// Renders a standalone prey/predator/shadow lookup result in the lookup panel.
+// Rations are only shown for prey entries that carry a rations_yielded value.
 function renderLookup(item, typeName) {
   if (!item) return;
   els.lookupType.textContent = typeName;
@@ -99,6 +90,9 @@ function renderLookup(item, typeName) {
   els.lookupResult.hidden = false;
 }
 
+// Special rendering path for lookout-weather events. The weather result is
+// displayed with fatigue values derived from the rolled weather category
+// rather than from a standard event object (which doesn't exist for this file).
 function renderWeatherEvent(entry) {
   const regionName = state.regions[state.regionId]?.name ?? '';
   const fatigue    = WEATHER_FATIGUE[entry.category] ?? { success: 1, failure: 2 };
@@ -107,6 +101,8 @@ function renderWeatherEvent(entry) {
   els.eventLabel.textContent = entry.label;
   els.fatigue.textContent    = `Success: ${fatigue.success} Fatigue · Failure: ${fatigue.failure} Fatigue`;
 
+  // Show the link to the Weather tab so the GM can view full weather context.
+  // Eye/notes/predator fields don't apply to weather events.
   els.weatherLink.hidden     = false;
   els.onEye.hidden           = true;
   els.notes.hidden           = true;
@@ -115,6 +111,8 @@ function renderWeatherEvent(entry) {
   els.result.hidden          = false;
 }
 
+// Renders a standard journey event. Optional fields (Eye of Sauron trigger,
+// GM notes, predator section) are shown only when the event defines them.
 function renderJourneyEvent(event, file, typeName) {
   const regionName = state.regions[state.regionId]?.name ?? '';
   const typeLabel  = typeName ? ` (${typeName})` : '';
@@ -133,7 +131,7 @@ function renderJourneyEvent(event, file, typeName) {
   if (event.notes) {
     els.notesText.textContent = event.notes;
     els.notes.hidden = false;
-    els.notes.open   = false;
+    els.notes.open   = false;  // collapsed by default so it doesn't dominate the result
   } else {
     els.notes.hidden = true;
   }
@@ -147,6 +145,9 @@ function renderJourneyEvent(event, file, typeName) {
 
 // ── Rolling ────────────────────────────────────────────────────────────────
 
+// Picks a random event file for the given target, then a random event within
+// that file. The lookout-weather file is a special case — it delegates to the
+// weather roller rather than containing its own event list.
 function rollEvent(target) {
   lastTarget = target;
   const files = getTargetFiles(target);
@@ -165,6 +166,8 @@ function rollEvent(target) {
 
 // ── Sync (called by tabs.js when switching to journey tab) ─────────────────
 
+// Repopulates the region and season dropdowns to match shared state. Called
+// by tabs.js on every tab switch so the selectors never show stale values.
 export function syncJourneyControls() {
   const oneRingRegions = Object.values(state.regions).filter(r => r.mode === 'one-ring');
   els.regionSelect.innerHTML = oneRingRegions
@@ -193,6 +196,8 @@ export function initJourney() {
     btn.addEventListener('click', () => rollEvent(btn.dataset.target));
   });
 
+  // Dispatches a custom event rather than importing tabs.js directly, avoiding
+  // a circular dependency (tabs.js already imports journey.js).
   els.weatherLink.addEventListener('click', () => {
     document.dispatchEvent(new CustomEvent('rpgw:switch-tab', { detail: 'weather' }));
   });
@@ -205,11 +210,13 @@ export function initJourney() {
     btn.addEventListener('click', () => rollEvent(btn.dataset.target));
   });
 
+  // Inline predator roll — triggered by an event that flags triggers_predator.
   els.rollPredatorBtn.addEventListener('click', () => {
     const p = rollPredator();
     if (p) showPredator(p, els.predatorName, els.predatorDesc, els.predatorRef, els.predatorResult);
   });
 
+  // Standalone lookup buttons — independent of the current event result.
   els.lookupPreyBtn.addEventListener('click', () => {
     renderLookup(rollPrey(), 'Prey');
   });

@@ -1,10 +1,17 @@
+// Weather tab — UI rendering, localStorage persistence, and the rollWeather
+// function that is also used by journey.js for lookout-weather events.
+
 import { roll } from './roller.js';
-import { state } from './state.js';
+import { state } from '../state.js';
 
 // ── localStorage ───────────────────────────────────────────────────────────
 
+// Key under which the current mode/region/season selection is persisted so
+// the app reopens in the same context across sessions.
 export const UI_KEY = 'rpgw:ui';
 
+// Each unique mode/region/season combination gets its own storage slot so
+// switching context never overwrites the roll history of another context.
 function tripletKey() {
   return `rpgw:${state.mode}:${state.regionId}:${state.season}`;
 }
@@ -13,6 +20,8 @@ function defaultTriplet() {
   return { prevCategory: null, resultLabel: null };
 }
 
+// Loads the persisted roll history for the current context. The spread onto
+// defaultTriplet() guards against partially-written entries in storage.
 function loadTriplet() {
   try {
     const raw = localStorage.getItem(tripletKey());
@@ -22,10 +31,14 @@ function loadTriplet() {
   }
 }
 
+// Persists the last rolled category and label so the Markov chain carries
+// state across page reloads and the result can be restored on return.
 function saveTriplet(data) {
   localStorage.setItem(tripletKey(), JSON.stringify(data));
 }
 
+// Persists the current mode/region/season selection. Called whenever any of
+// those three change so the app reopens in the same state.
 export function saveUI() {
   localStorage.setItem(UI_KEY, JSON.stringify({
     mode:     state.mode,
@@ -60,16 +73,20 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+// Returns the contextual meta line shown above the result label, or null for
+// Blade Runner mode where named regions and seasons don't exist.
 function buildMeta() {
   if (state.mode === 'one-ring') {
     const regionName = state.regions[state.regionId]?.name ?? '';
     return `In ${regionName}, ${capitalize(state.season)} —`;
   }
-  return null;  // Blade Runner: no meta line
+  return null;
 }
 
 // ── UI population ──────────────────────────────────────────────────────────
 
+// Rebuilds the region dropdown filtered to the current mode. One Ring and
+// Blade Runner have entirely separate region sets so the two never mix.
 function populateRegionSelect() {
   const filtered = Object.values(state.regions).filter(r => r.mode === state.mode);
   els.regionSelect.innerHTML = filtered
@@ -80,6 +97,9 @@ function populateRegionSelect() {
 
 // ── State → UI sync ────────────────────────────────────────────────────────
 
+// Applies all mode-driven UI changes in one pass: body class (loads the
+// correct CSS theme), theme-color meta tag, season visibility (Blade Runner
+// has no seasons), and the roll button label.
 export function syncModeUI() {
   const isBR = state.mode === 'blade-runner';
   els.body.className     = `mode-${state.mode}`;
@@ -110,6 +130,8 @@ function clearResult() {
   els.result.hidden = true;
 }
 
+// Recovers the last rolled result for the current context so history is
+// preserved when the user switches regions or seasons and switches back.
 function restoreResult() {
   const triplet = loadTriplet();
   if (triplet.resultLabel) {
@@ -121,9 +143,10 @@ function restoreResult() {
 
 // ── Rolling ────────────────────────────────────────────────────────────────
 
-// Pure roll: reads current region/season/mode from shared state, updates the
-// per-triplet localStorage history, returns the rolled entry. Exported so
-// Journey tab can invoke it for lookout-weather events.
+// Performs a weather roll for the current context, persists the result so
+// the Markov chain can use it next time, and returns the entry. Exported so
+// journey.js can trigger a roll for lookout-weather events without
+// duplicating the roll/persist logic.
 export function rollWeather() {
   const entries = state.regions[state.regionId].seasons[state.season];
   const triplet = loadTriplet();
@@ -138,6 +161,8 @@ function doRoll() {
 
 // ── Event handlers ─────────────────────────────────────────────────────────
 
+// Switching mode also resets season (Blade Runner has no named seasons) and
+// picks the first valid region for the new mode.
 function onModeClick(e) {
   const btn = e.target.closest('.mode-btn');
   if (!btn || btn.dataset.mode === state.mode) return;
@@ -164,6 +189,8 @@ function onSeasonChange() {
   saveUI();
 }
 
+// Clears the Markov history for the current context so the next roll is
+// unbiased — useful when starting a new in-game day or travel leg.
 function onReset() {
   saveTriplet(defaultTriplet());
   clearResult();
@@ -171,6 +198,8 @@ function onReset() {
 
 // ── Mode forcing (called by tabs.js when switching to Journey/Camp) ────────
 
+// Journey and Camp only support One Ring content. If Blade Runner was active,
+// this resets mode, season, and region before the new tab renders.
 export function forceOneRingMode() {
   if (state.mode === 'one-ring') return;
   state.mode     = 'one-ring';

@@ -1,7 +1,10 @@
-import { state } from './state.js';
-import { saveUI } from './weather.js';
+// Camp tab — rolls camp events using the One Ring feat die with optional
+// favoured mechanic, and provides standalone predator/shadow lookups.
+
+import { state } from '../state.js';
+import { saveUI } from '../weather/weather.js';
 import { featDie, dieFaceLabel } from './dice.js';
-import { rollPredator, rollShadow } from './predators.js';
+import { rollPredator, rollShadow } from '../journey/predators.js';
 
 // ── DOM refs ───────────────────────────────────────────────────────────────
 
@@ -30,6 +33,8 @@ const els = {
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 
+// Maps numeric die faces 1–6 to their camp event outcome keys in camp-events.json.
+// Faces 7–10 always resolve to no_event; Eye and Gandalf are handled separately.
 const NUM_KEY = {
   1: 'attack', 2: 'robbery', 3: 'flood',
   4: 'beasts', 5: 'wanderer', 6: 'elves_gift',
@@ -39,6 +44,8 @@ function pickRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+// Resolves a die face to its camp event outcome object. Eye and Gandalf are
+// special outcomes with their own keys; numeric faces 7+ mean nothing happens.
 function getOutcome(value) {
   if (value === 'eye')     return state.campEvents.special_outcomes.eye_worsened_attack;
   if (value === 'gandalf') return state.campEvents.special_outcomes.gandalf_elevated_gift;
@@ -59,6 +66,10 @@ function renderLookup(item, typeName) {
 
 // ── Rolling ────────────────────────────────────────────────────────────────
 
+// Rolls the feat die, resolves the outcome, and renders the result. When
+// favoured, the raw rolls are shown alongside the kept value so the player
+// can see both dice. Visual treatment is driven by data-outcomeType on the
+// result element so CSS handles the styling without any inline style logic.
 function rollCamp() {
   const favoured       = els.favouredCheck.checked;
   const { value, raw } = featDie(favoured);
@@ -77,12 +88,13 @@ function rollCamp() {
   if (outcome.consequences) {
     els.consequencesText.textContent = outcome.consequences;
     els.consequences.hidden = false;
-    els.consequences.open   = false;
+    els.consequences.open   = false;  // collapsed by default; GM can expand if needed
   } else {
     els.consequences.hidden = true;
   }
 
-  // Visual treatment: flourish for Gandalf, data attribute for CSS
+  // Gandalf triggers a decorative flourish animation; Eye and Gandalf also
+  // get distinct CSS treatment via data-outcomeType (good/evil/neutral).
   els.flourish.hidden            = value !== 'gandalf';
   els.result.dataset.outcomeType = value === 'gandalf' ? 'good'
                                  : value === 'eye'     ? 'evil'
@@ -92,6 +104,8 @@ function rollCamp() {
 
 // ── Sync (called by tabs.js when switching to camp tab) ────────────────────
 
+// Repopulates the region and season dropdowns from One Ring regions in shared
+// state. Called by tabs.js on every tab switch so selectors stay in sync.
 export function syncCampControls() {
   const oneRingRegions = Object.values(state.regions).filter(r => r.mode === 'one-ring');
   els.regionSelect.innerHTML = oneRingRegions

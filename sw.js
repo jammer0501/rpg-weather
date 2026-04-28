@@ -1,5 +1,5 @@
 // BUMP CACHE_VERSION when shipping content or code changes.
-const CACHE_VERSION = 'v8';
+const CACHE_VERSION = 'v9';
 const SHELL_CACHE   = `rpg-weather-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `rpg-weather-runtime-${CACHE_VERSION}`;
 const DEBUG = false;
@@ -14,13 +14,14 @@ const SHELL_URLS = [
   'index.html',
   'app.js',
   'state.js',
-  'weather.js',
-  'tabs.js',
-  'roller.js',
-  'predators.js',
-  'journey.js',
-  'camp.js',
-  'dice.js',
+  'core/tabs.js',
+  'weather/weather.js',
+  'weather/roller.js',
+  'journey/journey.js',
+  'journey/events.js',
+  'journey/predators.js',
+  'camp/camp.js',
+  'camp/dice.js',
   'manifest.webmanifest',
   'styles/base.css',
   'styles/one-ring.css',
