@@ -1,5 +1,5 @@
 // BUMP CACHE_VERSION when shipping content or code changes.
-const CACHE_VERSION = 'v9';
+const CACHE_VERSION = 'v11';
 const SHELL_CACHE   = `rpg-weather-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `rpg-weather-runtime-${CACHE_VERSION}`;
 const DEBUG = false;

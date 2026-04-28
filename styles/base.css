@@ -311,6 +311,18 @@ body.mode-blade-runner .result-flourish {
   transition: background 0.15s, color 0.15s;
 }
 
+.event-target-btn.is-active,
+.secondary-btn.is-active {
+  background: var(--color-btn-active-bg);
+  color: var(--color-btn-active-text);
+  border-color: var(--color-btn-active-bg);
+}
+
+.event-target-any {
+  border-left: 2px solid var(--color-border);
+  margin-left: 0.25rem;
+}
+
 /* ─── Journey result ──────────────────────────────────────────────────────── */
 
 .journey-result {

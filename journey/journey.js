@@ -44,6 +44,8 @@ const els = {
 
 // ── Module state ──────────────────────────────────────────────────────────
 
+const TARGETS = ['scout', 'lookout', 'hunter'];
+
 // Tracks the last event target so "Roll again" can repeat without the user
 // having to re-select a target button.
 let lastTarget = null;
@@ -148,8 +150,19 @@ function renderJourneyEvent(event, file, typeName) {
 // Picks a random event file for the given target, then a random event within
 // that file. The lookout-weather file is a special case — it delegates to the
 // weather roller rather than containing its own event list.
+function setActiveTargetBtn(target) {
+  els.targetBtns.forEach(btn => {
+    btn.classList.toggle('is-active', btn.dataset.target === target);
+  });
+  els.retargetBtns.forEach(btn => {
+    btn.classList.toggle('is-active', btn.dataset.target === target);
+  });
+}
+
 function rollEvent(target) {
+  if (target === 'any') target = TARGETS[Math.floor(Math.random() * TARGETS.length)];
   lastTarget = target;
+  setActiveTargetBtn(target);
   const files = getTargetFiles(target);
   if (!files.length) return;
 
